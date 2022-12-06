@@ -98,20 +98,7 @@
             function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='es';location.href=location.protocol+'//'+(lang == 'es' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
 
             /* ]]> */
-            window.addEventListener("DOMContentLoaded", function() {
-                if (location.href.includes("en.superhairpieces.es")) {
-                    document.querySelector(".nav-language-wrap span").innerHTML=`<img src="/content/images/common/flag-uk.svg" alt="English"/>`
-                    document.querySelector(".nav-language-wrap li[lang=en]").style.fontWeight="bold";
-                    document.querySelector(".navPages-language div[lang=en]").style.fontWeight="bold";
-                } else {
-                    document.querySelector(".nav-language-wrap span").innerHTML=`<img src="/content/images/common/flag-es.png" alt="Spanish"/>`
-                    document.querySelector(".nav-language-wrap li[lang=es]").style.fontWeight="bold";
-                    document.querySelector(".navPages-language div[lang=es]").style.fontWeight="bold";
-                }        
-                $(".nav-language-wrap span").on("click", function() {
-                    $(".nav-language-wrap .nav-language-selection-wrap").toggle();
-                })
-            })
+
         </script>        
     </body>
 </html>

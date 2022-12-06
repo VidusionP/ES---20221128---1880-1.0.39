@@ -32,7 +32,7 @@ products:
                     {{#replace '%%Syndicate%%' page.content}}
                         {{> components/page/rss_feed}}
                     {{else}}
-                        {{{page.content}}}
+                        {{> components/page/faq}}
                     {{/replace}}
                     {{{region name="page_builder_content"}}}
                 </main>

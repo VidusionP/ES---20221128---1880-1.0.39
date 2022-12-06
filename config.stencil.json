@@ -2,7 +2,9 @@
   "customLayouts": {
     "brand": {},
     "category": {},
-    "page": {},
+    "page": {
+      "custom-page.html" : "/test-faq"
+    },
     "product": {}
   },
   "normalStoreUrl": "https://superhairpieces.es/",
