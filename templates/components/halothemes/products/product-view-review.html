@@ -1,0 +1,766 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .checked {
+        color: rgb(255, 210, 0);
+    }
+    .checked1 {
+            color: rgb(141 141 141);
+    }
+    .fa-star-o {
+        color: rgb(255, 210, 0);
+    }
+    .fa-star-o1 {
+        color: rgb(141 141 141) !important;
+
+    }
+    .pageItems {
+        margin-top: 20px;
+    }
+    .productView-reviews {
+        padding: 0 15px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .productReview-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .productReview-num {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    .productReview-checked {
+        display: flex;
+        align-items: center;
+    }
+    .productReviews-card {
+        border-top: 1px solid #eee;
+        padding: 20px 0;
+    }
+    .productReviews-initial {
+        border-radius: 50%;
+        color: #bbb;
+        background-color: #f5f5f5;
+        height: 55px;
+        width: 69px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .productReviews-top {
+        display: flex;
+    }
+    .productReview-sepa {
+        margin-bottom: 10px;
+    }
+    .productReview-avg {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .productReviews-person {
+        margin-left: 10px;
+        width: 100%;
+    }
+    .productReviews-title {
+        font-weight: 700;
+        font-size: 15px;
+    }
+    .productReviews-body {
+        font-size: 14px;
+    }
+    .productReviews-name {
+        font-weight: 700;
+    }
+    .productReviews-location {
+        display: flex;
+    }
+    .productReviews-flag {
+        width: 18px;
+    }
+    .productReviews-location1 {
+        font-size: 12px;
+        font-weight: 400;
+        margin-left: 5px;
+    }
+    .paginator1 {
+        text-align: center;
+        
+    }
+    .paginator2 {
+        padding: 0 10px;
+    }
+    .barMain {
+        height: 15px;
+        width: 100px;
+        position: relative;
+        background-color: #f0f0f0;
+        margin-left: 5px;
+    }
+    .bar2 {
+        height: 15px;
+        /* width: 100px; */
+        background-color: rgb(255, 210, 0);
+        position: absolute;
+    }
+    .productReview-perct {
+        background-color: #5e5e5e;
+        color: white;
+        padding: 3px;
+        font-weight: 600;
+    }
+    .productReviews-card-top {
+        display: flex;
+        justify-content: space-between;
+    }
+    .active {
+        text-decoration: underline;
+        font-weight: 700;
+    }
+    .pageButtons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 18px;
+        gap: 10px;
+    }
+    .pageButton {
+        margin-bottom: 10px;
+        padding-right: 15px;
+    }
+    .productReview-main {
+        border-bottom: 1px solid #eee;
+        /* margin-bottom: 50px; */
+        margin-top: 50px;
+    }
+    .productReview-main-box {
+        padding: 20px 0;
+        border-bottom: 3px solid black;
+        width: fit-content;
+        font-weight: 700;
+
+    }
+    .productReview-media {
+        display: flex;
+        flex-wrap: wrap;
+        width: 310px;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+    .productReview-images {
+        gap: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .productReview-images > img {
+        width: 70px;
+        object-fit: cover;
+        height: 70px;
+    }
+    .productReview-videos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .productReview-search {
+        margin-top: 10px;
+    }
+    .productReview-input {
+        width: 100%;
+        padding: 9px 4px 9px 40px;
+        font-size: 16px;
+        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+        border: 1px solid #ccd6e0!important;
+        border-radius: 4px;
+        max-width: 500px;
+    }
+@media(min-width: 551px){
+        .productReview-top{
+            flex-direction: unset;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            justify-content: unset;
+        }
+        .productReview-avg {
+            padding-right: 20px;
+        }
+        .productReview-sepa {
+            border-left: 1px solid #eee ;
+            border-right: 1px solid #eee ;
+            padding-left: 20px;
+            padding-right: 20px;
+            
+        }
+        .productReview-top-middle {
+            margin-top: 20px;
+        }
+
+    }
+    @media(min-width: 764px) {
+        .productReview-media {
+            padding-left: 20px;
+            width: 500px;
+        }
+        .productReview-images > img {
+        width: 100px;
+        object-fit: cover;
+        height: 100px;
+    }
+    }
+    .productReview-select {
+        -o-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 3px 5px;
+        background-image:  url(https://cdn.stamped.io/cdn/images/icon-arrow-down-bg.svg)!important;
+        background-position: right -1px center;
+        background-repeat: no-repeat;
+        width: 210px; 
+        border: 1px solid #eee;
+        border-top: none;
+    }
+    .pageButton1 {
+        display: none;
+    }
+    .pageButton-arr1 {
+        padding-right: 10px;
+    }
+    .pageButton-arr2 {
+        padding-left: 10px;
+    }
+</style>
+
+<div class="productView-reviews">
+    <div class="container container1">
+        
+        <input type = "hidden" id = "thingIWant" value = "{{product.sku}}" />
+    </div>
+    <div class="productReview-top">
+        <div class="productReview-avg"></div>
+        <div class="productReview-sepa" id="productReview-sepa"></div>
+        <div class="productReview-media">
+            <div class="productReview-images"></div>
+            <div class="productReview-videos"></div>
+        </div>
+    </div>
+    <div class="productReview-top-middle"></div>
+    <div class="productReview-main" id="productReview-main"></div>
+    <div style="text-align: end;">
+        <select class="productReview-select" id="mySelect" onchange="sortOption()">
+            <option hidden>{{lang 'products.reviews.drop_down.sort'}}</option>
+            <option value="Most Recent">{{lang 'products.reviews.drop_down.recent'}}</option>
+            <option value="With Photos">{{lang 'products.reviews.drop_down.photo'}}</option>
+            <option value="Highest Rating">{{lang 'products.reviews.drop_down.high'}}</option>
+            <option value="Lowest Rating">{{lang 'products.reviews.drop_down.low'}}</option>
+
+        </select>    
+    </div>
+    <div class="productReview-search">
+        <input class="productReview-input" type="text" id="myInput" onkeyup='reviewBody(review3[0])' placeholder="{{lang 'products.reviews.search'}}">
+    </div>
+    <div class="pageItems" id="pageItems"></div>
+    <div class="pageButtons" id="pageButtons">
+        <div class="pageButton-arr1" id="pageButton-arr1"><</div>
+        <div class="pageButton-main" id="pageButton-main"></div>
+        <div class="pageButton-arr2" id="pageButton-arr2">></div>
+    </div>
+</div>
+<script>
+    // import {$,jQuery} from 'jquery';
+
+    function sortOption() {
+        let x = document.getElementById('mySelect').value
+
+        if ( x === 'Highest Rating') {
+            const sortArr = review3[0].sort((a,b) => {
+            return b['Review rate'] - a['Review rate']
+        })
+        // arrow2.removeEventListener('click', checkTest1)
+            reviewBody(sortArr)
+
+        }
+        else if ( x === 'Lowest Rating') {
+            const sortArr = review3[0].sort((a,b) => {
+            return a['Review rate'] - b['Review rate']
+        })
+        reviewBody(sortArr)
+
+        }
+        else if ( x === 'Most Recent') {
+            const sortArr = review3[0].sort((a,b) => {
+                return new Date(b['Date Created1']) - new Date(a['Date Created1'])
+        })
+        reviewBody(sortArr)
+
+        }
+        else if ( x === 'With Photos') {
+            const sortArr = review3[0].sort((a,b) => {
+                return b['Review images'] === null || "" ? -1 : 1
+        })
+        reviewBody(sortArr)
+
+        }
+        // console.log(sortArr)
+    }
+
+    let review2 = []
+    let filteredAr1 =[]
+    
+    let imageRoll = []
+    let videoRoll = []
+    let review3 = []
+    let review4 = []
+
+    var aList = document.getElementById("thingIWant").value;
+    if (aList == 'M106') {
+        aList = "M106#1"
+    } else if (aList == 'M106L') {
+        aList = 'M106L#1'
+    } else if (aList == 'Queen_18') {
+        aList = 'Q18'
+    } 
+    var target = document.querySelector(".container1");
+    let reviewRate = []
+    let reviewNumb = {
+        1: "hi",
+        2: "",
+        3: "",
+        4: "",
+        5: ""
+    }
+
+
+     function main() {
+        input1 = document.getElementById("productReview-sepa");
+        input1.innerHTML = '';
+        // $('.productReview-sepa').append('')
+        input = document.getElementById("myInput");
+        Promise.all([
+            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json").then(r => r.json()).then(r=>{
+          
+                              review2.push(...r)}),
+            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=500").then(r => r.json()).then(r=>{
+          
+                              review2.push(...r)}),
+            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=1000").then(r => r.json()).then(r=>{
+          
+                              review2.push(...r)}),
+            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=1500").then(r => r.json()).then(r=>{
+          
+                              review2.push(...r)}),
+          ])
+
+
+.then((r) => {
+    const filteredAr = review2.filter(item => item['Product SKU'] === aList)
+    filteredAr.forEach((item) => {
+        filteredAr1.push(item)
+    }) 
+    const sortedArr9 = filteredAr.reduce((acc, element) => {
+    if (element['location'] === 'Netherlands') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr8 = sortedArr9.reduce((acc, element) => {
+    if (element['location'] === 'Norway') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr7 = sortedArr8.reduce((acc, element) => {
+    if (element['location'] === 'Denmark') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr6 = sortedArr7.reduce((acc, element) => {
+    if (element['location'] === 'Belgium') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+    const sortedArr5 = sortedArr6.reduce((acc, element) => {
+    if (element['location'] === 'United Kingdom') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr4 = sortedArr5.reduce((acc, element) => {
+    if (element['location'] === 'Italy') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr3 = sortedArr4.reduce((acc, element) => {
+    if (element['location'] === 'Ireland') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr2 = sortedArr3.reduce((acc, element) => {
+    if (element['location'] === 'Germany') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr1 = sortedArr2.reduce((acc, element) => {
+    if (element['location'] === 'France') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr = sortedArr1.reduce((acc, element) => {
+    if (element['location'] === 'Spain') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+
+
+review3.push(sortedArr)
+    reviewTop()
+    reviewBody(sortedArr)
+})
+.catch((err) => {
+    console.log(err);
+});
+
+
+     }
+function reviewBody(sortedArr) {
+    let input2 = document.getElementById("pageButton-main");
+    input2.innerHTML = '';
+
+    const filteredArr = sortedArr.filter(letterV => {
+        if (letterV['Review body']) {
+            return letterV['Review body'].toLowerCase().includes(input.value.toLowerCase())
+        }
+    }
+
+    )
+
+
+    var pages = paginate(8, filteredArr);
+
+function paginate(n, filteredAr1) {
+    return divide(n, filteredAr1).map(function (items, index) {
+        var number = n * index;
+
+        return {
+            start: number + 1,
+            end: number + items.length,
+            items: items,
+            page: index + 1
+        };
+    });
+}
+
+
+var items = document.getElementById("pageItems");
+var buttons = document.getElementById("pageButton-main");
+var arrow1 = document.getElementById("pageButton-arr1");
+var arrow2 = document.getElementById("pageButton-arr2");
+var mainBody = document.getElementById('productReview-main')
+
+
+appendChildren(buttons, pages.map(function (page, index) {
+
+        var button = document.createElement("button");
+    button.setAttribute("id",index)
+    button.setAttribute("class", 'pageButton')
+    button.addEventListener("click", display);
+    button.myParam = page
+    button.innerHTML = index + 1;
+
+
+
+
+
+    if (index > 4) {
+    button.setAttribute("class", 'pageButton pageButton1')
+
+    }
+
+    if (index === 0) {
+
+        button.setAttribute("class", 'pageButton active')
+    }
+    return button;
+
+
+
+}));
+function display(page) {
+    const check6 = page.currentTarget.myParam
+        $(this).siblings().removeClass('pageButton1')
+
+        $(this).siblings().slice(+this.id + +2).addClass('pageButton1')
+        if (this.id >1) {
+            $(this).siblings().slice(0, +this.id - +2).addClass('pageButton1')
+        }
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active');
+    const y = mainBody.getBoundingClientRect().top + window.scrollY;
+    window.scroll({
+        top: y,
+        behavior: 'smooth'
+    })
+        displayPage(check6);
+    }
+
+
+
+
+
+
+displayPage(pages[0]);
+function displayPage(page,button) {
+    // header.innerHTML = "Items " + page.start + " to " + page.end + ":";
+    // console.log(buttons)
+
+    items.start = page.start;
+    items.innerHTML = "";
+
+
+    appendChildren(items, page.items.map(function (element) {
+
+        $('#pageItems').append(`                     <div class="productReviews-card">
+                            <div class="productReviews-top">
+                                <div class="productReviews-initial">` + (element['Author name'] ? element['Author name'][0] : 'A') + `</div>
+                                <div class="productReviews-person">
+                                    <div class='productReviews-card-top'>
+                                        <div>
+                                            <div class="productReviews-name">` + (element['Author name'] ? element['Author name'].split(' ').length > 1 ? element['Author name'].split(' ')[0] +  ' ' + element['Author name'].split(' ')[1][0] + '.' : element['Author name'] : 'Anonymous') + `</div>
+                                            ` + (element['country ISO'] && element['location'] ? `<div class="productReviews-location"><img class="productReviews-flag" src=https://cdn.stamped.io/cdn/flags/${element['country ISO']}.svg><div class="productReviews-location1">${element['location']}</div></div>`: '') +  
+
+                                            `
+                                            
+                                        </div>
+                                        <div>
+                                            ` + new Date(parseInt(new Date(element['Date Created1']).getMonth()+1) + '/' +(new Date(element['Date Created1']).getDate()) + '/' + new Date(element['Date Created1']).getFullYear()).toLocaleDateString('fr-FR', {year: "numeric", month: "long", day: "numeric"}) +
+                                        `</div>
+                                    </div>
+                                    
+                                    <div  class="productReviews-rating">
+                                        <span class="fa fa-star`+(1 <= element['Review rate']? ' checked': ' fa-star-o') + `"></span>
+                                        <span class="fa fa-star`+(2 <= element['Review rate']? ' checked': ' fa-star-o') + `"></span>
+                                        <span class="fa fa-star`+(3 <= element['Review rate']? ' checked': ' fa-star-o') + `"></span>
+                                        <span class="fa fa-star`+(4 <= element['Review rate']? ' checked': ' fa-star-o') + `"></span>
+                                        <span class="fa fa-star`+(5 <= element['Review rate']? ' checked': ' fa-star-o') + `"></span>    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productReviews-bottom">
+                                <div class="productReviews-title">` + (element['Review title']? element['Review title'] : '') + `</div>
+                                <div class="productReviews-body">${element['Review body']}</div>
+                                <div class="productReviews-media" style=display:flex;flex-wrap:wrap;>
+                                `
+                                    // + ( element['Review images'] === null|| "" ?  '' : `<img style=width:150px src=https://cdn.stamped.io/tr:h-800,tr:oi-uploads@@account@@91914@@meta@@watermark_image.jpg,ow-80,oit-false,oy-N35,ox-N35/uploads/photos/${element['Review images']} />` ) + `
+                                    + ( element['Review images'] === null|| "" ?  '' : element['Review images'].indexOf(',')> -1 ? element['Review images'].split(',').map(item => `<img style=width:110px;height:160px;object-fit:cover src=https://cdn.stamped.io/tr:h-800,tr:oi-uploads@@account@@91914@@meta@@watermark_image.jpg,ow-80,oit-false,oy-N35,ox-N35/uploads/photos/${item}>`) : `<img style=width:110px;height:160px;object-fit:cover src=https://cdn.stamped.io/tr:h-800,tr:oi-uploads@@account@@91914@@meta@@watermark_image.jpg,ow-80,oit-false,oy-N35,ox-N35/uploads/photos/${element['Review images']}>` )
+                                    + ( element['Review videos'] === null|| "" ?  '' : element['Review videos'].indexOf(',')> -1 ? element['Review videos'].split(',').map(item => `<video style=margin-left:5px; poster="//cdn.stamped.io/uploads/videos/${item}.jpg" height="160px" controls="" preload="none" onclick="event.stopPropagation(); this.play()"><source src="//s3.us-west-2.amazonaws.com/stamped.io/uploads/videos/${item}.mp4#t=0.1" type="video/mp4"></video>`) : `<video style=margin-left:5px; poster="//cdn.stamped.io/uploads/videos/${element['Review videos']}.jpg" height="160px" controls="" preload="none" onclick="event.stopPropagation(); this.play()"><source src="//s3.us-west-2.amazonaws.com/stamped.io/uploads/videos/${element['Review videos']}.mp4#t=0.1" type="video/mp4"></video>` ) + `
+                                </div>
+                                    </div>
+                            </div>
+                        </div>`);
+
+    }));
+}
+
+function appendChildren(element, children) {
+
+    children.forEach(function (child) {
+        if (child) {
+            element.appendChild(child);
+        }
+    });
+
+}
+
+function take(n, filteredAr1) {
+    return filteredAr1.slice(0, n);
+}
+
+function drop(n, filteredAr1) {
+    return filteredAr1.slice(n);
+}
+
+function concat(lists) {
+    return Array.prototype.concat.apply(this, lists);
+}
+
+function divide(n, filteredAr1) {
+    if (filteredAr1.length) {
+        var head = take(n, filteredAr1);
+        var tail = drop(n, filteredAr1);
+        return concat.call([head], [divide(n, tail)]);
+    } else return [];
+}
+}
+function reviewTop() {
+    filteredAr1.map(element => reviewRate.push(element['Review rate']))
+    filteredAr1.map(element => element['Review images'] === null ? 
+    '':
+     imageRoll.push(...element['Review images'].split(',')))
+     filteredAr1.map(element => element['Review videos'] === null ? 
+    '':
+     videoRoll.push(...element['Review videos'].split(',')))
+    const rate1 = filteredAr1.filter(x => x['Review rate']==1).length
+    const rate2 = filteredAr1.filter(x => x['Review rate']==2).length
+    const rate3 = filteredAr1.filter(x => x['Review rate']==3).length
+    const rate4 = filteredAr1.filter(x => x['Review rate']==4).length
+    const rate5 = filteredAr1.filter(x => x['Review rate']==5).length
+    const test123 = 'vidu'
+    const bar = (rate5/filteredAr1.length) * 100
+    // console.log(rate5/filteredAr1.length * 100)
+    const reviewAvg = Math.round((reviewRate.reduce((a,b ) => a+ b, 0)/reviewRate.length) * 10)/10 || 0
+    $('#reviewMain').append(`
+                <span class='productReview-result'>
+                    <span class="fa fa-star`+(0.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(1.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(2.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(3.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(4.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>      
+                </span>
+                <div style=padding-left:10px;>
+                    ${filteredAr1.length} Reseñas
+                </div>
+    `)
+    $(".productReview-avg").append (
+    `
+                <span class='productReview-num'>${reviewAvg}</span>
+                <span class='productReview-result'>
+                    <span class="fa fa-star`+(0.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(1.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(2.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(3.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                    <span class="fa fa-star`+(4.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>      
+                </span>
+                <div class='productReview-para'>
+                    {{lang 'products.reviews.based' num='${filteredAr1.length}'}}
+                </div>
+                `
+    )
+    $(".productReview-main").append(
+        `
+        <div class='productReview-main-box'>
+            {{lang 'products.reviews.title' num='${filteredAr1.length}'}}
+            
+        </div>
+
+        `
+    )
+    $('.productReview-sepa').append(
+        `
+            <div class='productReview-checked'>
+                <div>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>      
+                </div>
+                <div class=barMain><span class=bar2 style=width:${bar}%></span></div>
+                <div>(${rate5})</div>
+            </div>
+            <div class='productReview-checked'>
+                <div>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>      
+                </div>
+                <div class=barMain><span class=bar2 style=width:${(rate4/filteredAr1.length) * 100}%></span></div>
+                <div>(${rate4})</div>
+            </div>
+            <div class='productReview-checked'>
+                <div>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>      
+                </div>
+                <div class=barMain><span class=bar2 style=width:${(rate3/filteredAr1.length) * 100}%></span></div>
+                <div>(${rate3})</div>
+            </div>
+            <div class='productReview-checked'>
+                <div>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>      
+                </div>
+                <div class=barMain><span class=bar2 style=width:${(rate2/filteredAr1.length) * 100}%></span></div>
+                <div>(${rate2})</div>
+            </div>
+            <div class='productReview-checked'>
+                <div>
+                    <span class="fa fa-star checked1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>
+                    <span class="fa fa-star fa-star-o fa-star-o1"></span>      
+                </div>
+                <div class=barMain><span class=bar2 style=width:${(rate1/filteredAr1.length) * 100}%></span></div>
+                <div>(${rate1})</div>
+            </div>
+        `)
+        imageRoll.slice(0,8).forEach(item => {
+            // console.log(item[item.length])
+            // console.log(item)
+            $('.productReview-images').append(
+                `<img  src=https://cdn.stamped.io/tr:h-800,tr:oi-uploads@@account@@91914@@meta@@watermark_image.jpg,ow-80,oit-false,oy-N35,ox-N35/uploads/photos/${item}>`
+            )
+        })
+        videoRoll.slice(0,3).forEach(item => {
+            // console.log(item[item.length])
+            $('.productReview-videos').append(
+                `<video class=productReview-videos1 poster="//cdn.stamped.io/uploads/videos/${item}.jpg" height="100px" controls="" preload="none" onclick="event.stopPropagation(); this.play()"><source src="//s3.us-west-2.amazonaws.com/stamped.io/uploads/videos/${item}.mp4#t=0.1" type="video/mp4"></video>`
+            )
+        })
+    $('.productReview-top-middle').append(
+
+        `<div>
+            {{lang 'products.reviews.recommend1'}}
+            <span class='productReview-perct'>{{lang 'products.reviews.recommend2' num='${Math.round(((rate5 + rate4 + rate3) /filteredAr1.length) * 100) || 0}'}}</span>
+            {{lang 'products.reviews.recommend'}}
+            </div>`
+    
+    )
+    $('.productReview-search').append(
+        `
+        <div>
+            
+        </div>
+        `
+    )
+    $('.productReview-images').append(
+        `
+        <div>
+            
+        </div>
+        `
+    )
+}
+
+    window.addEventListener("DOMContentLoaded", main())
+</script>

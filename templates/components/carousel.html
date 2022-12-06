@@ -1,0 +1,278 @@
+<div class="heroCarousel-wrapper">
+    <div class="heroCarousel"
+        data-slick='{
+            "arrows": true,
+            "mobileFirst": true,
+            "speed": 300,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay": true,
+            "autoplaySpeed": {{carousel.swap_frequency}},
+            "lazyLoad": "anticipated",
+            "infinite": true,
+            "fade": true,            
+            "asNavFor": ".heroCarousel-custom",
+            "nextArrow": "<svg class=&apos;slick-next slick-arrow&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+            "prevArrow": "<svg class=&apos;slick-prev slick-arrow&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>",
+            "responsive": [
+                {
+                    "breakpoint": 1200,
+                    "settings": {
+                        "dots": false,
+                        "arrows": {{theme_settings.homepage_show_carousel_arrows}}
+                    }
+                }
+            ]
+        }'>
+        <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+            <div class="heroCarousel-image-wrapper">
+                <a href="/ofertas/" class="heroCarousel-image">
+                    <picture>
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/event1-pc.jpg" type="image/jpg">
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/event1-pc.webp" type="image/webp">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/event1-tablet.webp" type="image/webp">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/event1-tablet.jpg" type="image/jpg">                        
+                        <source srcset="/content/images/homepage/event1-mobile.webp" type="image/webp">
+                        <img class="lazyload image-mobile shown" src="{{cdn 'img/loading.svg'}}" data-src="/content/images/homepage/event1-mobile.jpg" alt="Coupon" title="Coupon">
+                    </picture>
+                                       
+                </a>
+            </div>
+        </div>
+        <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+            <div class="heroCarousel-image-wrapper">
+                <a href="/accesorios/" class="heroCarousel-image">
+                    <picture>
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/freeshipping-pc.jpg" type="image/jpg">
+                        <source media="(min-width:600px)" srcset="/content/images/homepage/freeshipping-tablet.jpg" type="image/jpg">                        
+                        <img class="lazyload image-mobile shown" src="{{cdn 'img/loading.svg'}}" data-src="/content/images/homepage/freeshipping-mobile.jpg" alt="freeshipping" title="freeshipping">
+                    </picture>
+                </a>
+            </div>
+        </div>
+        <!-- <div class="heroCarousel-content hr-content-coupon">
+            <div class="left">
+                <div class="line1a">Cupón de Descuento</div>
+                <div class="line2a">¡Suscríbete a nuestro boletín y ahorra en tu próxima compra de Prótesis capilares y Pelucas!</div>
+                <div class="line3a">10€ de descuento</div>
+                <div class="line4a">para los suscriptores</div>
+                <div class="line5a">Suscríbeme ya!</div>   
+            </div>
+            <div class="right">
+                <div class="line1b">Valor</div>
+                <div class="line2b">10€</div>   
+                <div class="line3b">Suscríbeme ya!</div>                         
+            </div>
+        </div> -->
+        <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+            <div class="heroCarousel-image-wrapper">
+                <a href="/hombre/protesis-capilares-hombre/" class="heroCarousel-image">
+                    <picture>
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/banner1-pc.webp" type="image/webp">
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/banner1-pc.jpg" type="image/jpg">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/banner1-tablet.webp" type="image/webp">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/banner1-tablet.jpg" type="image/jpg">                        
+                        <source srcset="/content/images/homepage/banner1-mobile.webp" type="image/webp">
+                        <img class="lazyload image-mobile shown" src="{{cdn 'img/loading.svg'}}" data-src="/content/images/homepage/banner1-mobile.jpg" alt="Men" title="Men">
+                    </picture>
+                    <div class="heroCarousel-content hr-content">
+                        <div class="hr-title heroCarousel-title">Prótesis Capilares para Hombres</div>
+                        <div class="hr-subtitle heroCarousel-subtitle">¡El proveedor número 1 de prótesis capilares ya está en España!</div>
+                        <ul class="hr-link heroCarousel-customLink"><li>Comprar</li></ul>
+                    </div>                    
+                </a>
+            </div>
+        </div>
+        <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+            <div class="heroCarousel-image-wrapper">
+                <a href="/mujeres/protesis-capilares-mujer/" class="heroCarousel-image">
+                    <picture>
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/banner2-pc.webp" type="image/webp">
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/banner2-pc.jpg" type="image/jpg">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/banner2-tablet.webp" type="image/webp">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/banner2-tablet.jpg" type="image/jpg">                        
+                        <source srcset="/content/images/homepage/banner2-mobile.webp" type="image/webp">
+                        <img class="lazyload image-mobile shown" src="{{cdn 'img/loading.svg'}}" data-src="/content/images/homepage/banner2-mobile.jpg" alt="Women" title="Women">
+                    </picture>
+                    <div class="heroCarousel-content hr-content">
+                        <div class="hr-title heroCarousel-title">Prótesis Capilares para MUJERES</div>
+                        <div class="hr-subtitle heroCarousel-subtitle">¡El proveedor número 1 de prótesis capilares ya está en España!</div>
+                        <ul class="hr-link heroCarousel-customLink"><li>Comprar</li></ul>
+                    </div>                    
+                </a>
+            </div>
+        </div>
+        <!-- <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+            <div class="heroCarousel-image-wrapper">
+                <a href="/accesorios/" class="heroCarousel-image">
+                    <picture>
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/banner3-pc.webp" type="image/webp">
+                        <source media="(min-width:900px)" srcset="/content/images/homepage/banner3-pc.jpg" type="image/jpg">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/banner3-tablet.webp" type="image/webp">
+                        <source media="(min-width:390px)" srcset="/content/images/homepage/banner3-tablet.jpg" type="image/jpg">                        
+                        <source srcset="/content/images/homepage/banner3-mobile.webp" type="image/webp">
+                        <img class="lazyload image-mobile shown" src="{{cdn 'img/loading.svg'}}" data-src="/content/images/homepage/banner3-mobile.jpg" alt="Service" title="Service">
+                    </picture>
+                    <div class="heroCarousel-content hr-content-service">
+                        <div class="hr-title hr-title-service heroCarousel-title">Envío gratuito en todas las prótesis</div>
+                        <div class="hr-subtitle hr-subtitle-service heroCarousel-subtitle" mobile>Cómo parte del lanzamiento de nuestra web, recibe envío gratuito en TODAS las prótesis capilares, sólo por tiempo limitado.</div>
+                        <div class="hr-subtitle hr-subtitle-service heroCarousel-subtitle" tablet>Cómo parte del lanzamiento de nuestro sitio web, recibir envío gratuito en TODAS las prótesis capilares. Con esta oferta de tiempo limitado, no tendrá que preocuparse más por costos extra</div>
+                        <div class="hr-subtitle hr-subtitle-service heroCarousel-subtitle" pc>Cómo parte del lanzamiento de nuestro sitio web, usted puede recibir envío gratuito en TODAS las prótesis capilares. Con esta oferta de tiempo limitado, no tendrá que preocuparse más por costos de importación, personalización entre otros. </div>
+                        <ul class="hr-link heroCarousel-customLink hr-link-service"><li>¡Compre ahora!</li></ul>
+                    </div>                    
+                </a>
+            </div>
+        </div> -->
+        {{!--
+        {{#each carousel.slides}}
+            <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+                {{#if @index '==' 0}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_0_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_0_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_0_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_0_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_0_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_0_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_0_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_0_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_0_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_0_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_0_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_0_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 1}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_1_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_1_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_1_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_1_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_1_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_1_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_1_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_1_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_1_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_1_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_1_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_1_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 2}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_2_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_2_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_2_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_2_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_2_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_2_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_2_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_2_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_2_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_2_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_2_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_2_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 3}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_3_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_3_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_3_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_3_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_3_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_3_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_3_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_3_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_3_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_3_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_3_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_3_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 4}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_4_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_4_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_4_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_4_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_4_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_4_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_4_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_4_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_4_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_4_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_4_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_4_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                <div class="heroCarousel-image-wrapper">
+                    <a class="heroCarousel-image" href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'common.carousel_slide_number' slide_number=(add @index 1)}}{{/if}}">
+                        {{#if @first}}
+                            {{> components/common/responsive-img
+                                image=stencil_image
+                                class="heroCarousel-image"
+                                fallback_size='1280w'
+                                lazyload='disabled'
+                            }}
+                        {{else}}
+                            {{> components/common/responsive-img
+                                image=stencil_image
+                                class="heroCarousel-image"
+                                fallback_size='1280w'
+                                lazyload='lazyload'
+                            }}
+                        {{/if}}
+                        {{#if imageMobile}}
+                            <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../settings.store_hash}}/product_images/uploaded_images/{{imageMobile}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                        {{else}}
+                            <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="heroCarousel-content-wrapper">
+                    {{#if heading}}
+                        {{> components/carousel-content show_background=true}}
+                    {{else}}
+                        {{#if text}}
+                            {{> components/carousel-content show_background=true}}
+                        {{else}}
+                            {{#if button_text}}
+                                {{> components/carousel-content show_background=false}}
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+        --}}
+    </div>
+    <div class="heroCarousel-custom" data-autoplay="{{carousel.swap_frequency}}">
+        {{!-- {{#each carousel.slides}}
+            {{#if @index '==' 0}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_0_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 1}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_1_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 2}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_2_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 3}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_3_position-content)}}{{/if}}
+            {{/if}}
+
+            <div class="heroCarousel-customItem">
+                <div class="heroCarousel-customLinks" data-title="0{{add @index 1}}" data-position="{{position}}"></div>
+            </div>
+        {{/each}}--}}
+        <div class="heroCarousel-customItem">
+            <div class="heroCarousel-customLinks" data-title="01" data-position="left"></div>
+        </div>
+        <div class="heroCarousel-customItem">
+            <div class="heroCarousel-customLinks" data-title="02" data-position="left"></div>
+        </div>
+        <div class="heroCarousel-customItem">
+            <div class="heroCarousel-customLinks" data-title="03" data-position="left"></div>
+        </div>
+        <div class="heroCarousel-customItem">
+            <div class="heroCarousel-customLinks" data-title="04" data-position="left"></div>
+        </div>
+
+    </div>
+</div>

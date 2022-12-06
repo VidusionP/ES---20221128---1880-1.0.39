@@ -1,0 +1,1261 @@
+<link rel="preload" as="image" href="/content/images/common/product-tab1.svg">
+<link rel="preload" as="image" href="/content/images/common/product-tab2.svg">
+<link rel="preload" as="image" href="/content/images/common/product-tab3.svg">
+<link rel="preload" as="image" href="/content/images/common/product-tab4.svg">
+<link rel="preload" as="image" href="/content/images/common/product-tab-warranty.svg">
+<style>
+    :root {
+        --element-margin-y: 20px;
+        --element-margin-x: 25px;
+        --section-margin-x: 60px;
+        --section-margin-y: 20px;
+        --color1: #227178;
+        --color2: #969696;
+        --color3: #fafafa;
+        --border-color: #bcbcbc;
+        --icon-color: #f7c34a;
+        --icon-size: 54px;
+        --font-size1: 17px;
+        --font-size2: 13px;
+        --font-size3: 15px;
+    }
+    .desp-wrap {
+        padding: var(--section-margin-y) var(--section-margin-x);
+        font-size: 1.1rem;
+    }
+    .desp-wrap .item {
+        padding: var(--element-margin-y) var(--element-margin-x);
+        border-top: 1px solid var(--border-color);
+        display: grid;
+        grid-template-columns: 250px auto;
+    }
+    .desp-wrap .item:first-child {
+        border: 0;
+    }
+    .desp-wrap .item .desp-title {
+        text-transform: uppercase;
+    }    
+    .productView-bottomInfo .productView-shortDesc {
+        max-height: unset;
+    }
+    .desp-feature-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: var(--element-margin-x);
+        padding: var(--element-margin-y) 0;
+        align-items: center;
+    }
+    .desp-feature-wrap .item {
+        position: relative;
+        margin-bottom: var(--element-margin-y);
+    }
+    .desp-feature-wrap .item .item-text {
+        margin-left: calc(var(--icon-size) + 15px);
+        /* display: flex; */
+        /* align-items: center; */
+        /*height: var(--icon-size);*/
+    }
+    .desp-feature-wrap .item .item-text .label {
+        font-weight: bold;
+    }
+    .desp-feature-wrap .item::before {
+        position: absolute;
+        top: calc(50% - 27px);
+        left: 0;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        background-color: var(--icon-color);
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+    }
+    .desp-feature-wrap .item::after {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        content: "";
+        background-position: center;
+        position: absolute;
+        left: 0;
+        top: calc(50% - 27px);
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+    }
+    .desp-feature-wrap .item.item-review::after {
+        background-image: url(/content/images/common/star.svg);
+    }
+    .desp-feature-wrap .item.item-hairline::after {
+        background-image: url(/content/images/common/short-male-hair-shape.svg);
+    }
+    .desp-feature-wrap .item.item-appearance::after {
+        background-image: url(/content/images/common/man-hair.svg);
+    }
+    .desp-feature-wrap .item.item-time::after {
+        background-image: url(/content/images/common/time.svg);
+    }
+    .desp-feature-wrap .item.item-attach::after {
+        background-image: url(/content/images/common/heart.svg);
+    }
+    .desp-feature-wrap .item.item-clean::after {
+        background-image: url(/content/images/common/clean.svg);
+    }
+    .desp-feature-wrap .item.item-tape::after {
+        background-image: url(/content/images/common/tape.svg);
+    }
+    .desp-feature-wrap .item.item-clip::after {
+        background-image: url(/content/images/common/hair-clip.svg);
+    }
+    .desp-feature-wrap .item.item-glue::after {
+        background-image: url(/content/images/common/glue.svg);
+    }
+    .desp-color-wrap {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: var(--element-margin-x);
+        grid-row-gap: calc(var(--element-margin-x) * 2);    
+        position: relative;
+        padding-bottom: 5rem;    
+    }
+    .desp-color-wrap .name {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .desp-video-wrap.hidden .video-wrap:nth-child(n+3), .desp-color-wrap.hidden .c-item:nth-child(n+13) {
+        display: none;        
+    }
+    .desp-color-wrap img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;        
+    }
+    .desp-color-wrap .show-more, .desp-video-wrap .show-more {
+        text-align: center;
+        cursor: pointer;
+        text-decoration: underline;
+        text-transform: capitalize;        
+        width: 100%;        
+        margin-top: var(--element-margin-y);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .desp-color-wrap .show-more:focus, .desp-color-wrap .show-more:active, .desp-video-wrap .show-more:focus, .desp-video-wrap .show-more:active {
+        outline: none !important;
+    }
+    .desp-video-wrap {
+        position: relative;
+        padding-bottom: 5rem;
+    }
+    .desp-video-wrap .video-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: var(--element-margin-x);
+        margin: var(--element-margin-y) 0;
+        padding-top: var(--element-margin-y);
+        color: inherit;
+    }
+    .desp-video-wrap .video-wrap:focus, .desp-video-wrap .video-wrap:active {
+        outline: none !important;
+    }
+    .desp-video-wrap .video-main {
+        width: 100%;
+        height: 50vw;
+    }
+    .desp-video-wrap .video-wrap img {
+        width: 100%;
+        height: auto;        
+    }
+    .desp-video-wrap .video-wrap .img-wrap {
+        position: relative;
+    }
+    .desp-video-wrap .video-wrap .img-wrap::after {
+        content: "";
+        background-image: url(/content/images/common/play.svg);
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px;
+        height: 44px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .desp-video-wrap .video-wrap:not(:first-of-type) {
+        border-top: 1px solid var(--border-color);
+    }
+    .productView-tabs .card .title{
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    .productView-tabs .card .title img {
+        height: 25px;
+    }
+    .productView-tabs .card .title:focus, .productView-tabs .card .title:active, .productView-bottomInfo .productView-moreDesc a:focus, .productView-bottomInfo .productView-moreDesc a:active {
+        outline: none !important;
+    }
+    .productView-thumbnail .productView-thumbnail-link img, .productView-image .productView-img-container img {
+        object-fit: contain;
+        -o-object-fit: contain;
+    }
+    .productView-img-container + img {
+        background-color: #fff;
+    }
+    [section=description] [section=hidden] {
+        display: none;
+    }
+    @media (max-width: 1024px) {
+        .desp-color-wrap {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    @media (max-width: 900px) {
+        .desp-wrap .item {
+            display: block;
+        }
+        .desp-wrap .item .desp-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: calc(var(--element-margin-y) / 2);
+        }
+        .desp-feature-wrap {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .desp-color-wrap {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (max-width: 600px) {
+        :root {
+            --element-margin-y: 13px;
+            --element-margin-x: 20px;
+            --section-margin-x: 30px;
+            --section-margin-y: 15px;
+            --icon-size: 41px;
+        }
+        .desp-feature-wrap {
+            grid-template-columns: auto;
+            padding: 0 1rem;
+        }
+        /*.desp-feature-wrap .item .item-text {*/
+        /*    margin-left: 0;*/
+        /*    text-align: center;*/
+        /*    justify-content: center;*/
+        /*    margin-top: calc(var(--icon-size) + 5px);*/
+        /*}*/
+        /*.desp-feature-wrap .item::before,*/
+        /*.desp-feature-wrap .item::after {*/
+        /*    left: 50%;*/
+        /*    transform: translateX(-50%);*/
+        /*    top: 0;*/
+        /*}*/
+        .desp-color-wrap {
+            grid-template-columns: repeat(2, 1fr);
+        }        
+    }
+    @media (min-width: 475px) {
+        .desp-video-wrap .video-wrap {
+            font-size: var(--font-size1);
+            font-weight: bold;
+        }
+    }
+    @media (min-width: 801px) {
+        .desp-video-wrap {
+            display: grid;
+            grid-template-columns: 60% auto;
+            grid-column-gap: var(--element-margin-x);
+            max-height: 50vw;
+            overflow: auto;
+            padding-right: 36px;
+            padding-bottom: 1rem;
+        }
+        .desp-video-wrap.hidden .video-wrap:nth-child(n+3) {
+            display: grid;        
+        }
+        .desp-video-wrap .show-more {
+            display: none;
+        }
+        .desp-video-wrap .content {
+            max-height: 250px;
+        }
+        .video-main {
+            position: sticky;            
+            top: 0;
+        }
+        .desp-video-wrap .video-wrap {
+            font-size: var(--font-size2);
+            font-weight: normal;
+        }
+        .desp-video-wrap .video-wrap:first-child {
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .desp-video-wrap::-webkit-scrollbar{
+            width: 8px;
+        }
+
+        .desp-video-wrap::-webkit-scrollbar-track{
+            background: var(--color3); 
+        }
+
+        .desp-video-wrap::-webkit-scrollbar-thumb{
+            background: var(--color2); 
+        }     
+        .desp-video-wrap .video-main {
+            height: 35vw;
+        }   
+        /* .desp-video-wrap::-webkit-scrollbar-thumb:hover{
+            background: $color-whitesBase; 
+        } */
+    }
+    @media (min-width: 992px) {
+        .desp-color-wrap.hidden .c-item:nth-child(n+13) {
+            display: block;        
+        }
+        .desp-color-wrap .show-more {
+            display: none;
+        }
+        .desp-color-wrap {
+            padding-bottom: 1rem;
+        }
+        .card-body[video] {
+            max-height: unset !important;
+            padding-right: 0 !important;
+        }
+        .desp-video-wrap .video-main {
+            height: 25vw;
+        }
+        .desp-video-wrap {
+            max-height: 30vw;
+        }
+    }
+    @media (min-width:1000px) {
+        .desp-video-wrap .video-wrap {
+            font-size: var(--font-size3);
+        }        
+    }
+</style>
+{{#each product.reviews.messages}}
+    {{#if error}}
+        {{> components/common/alert-error error}}
+    {{/if}}
+    {{#if success}}
+        {{> components/common/alert-success success}}
+    {{/if}}
+{{/each}}
+<div class="productView halo-productView productView-slick" {{#if settings.data_tag_enabled}} data-event-type="product" data-entity-id="{{product.id}}" data-name="{{product.title}}" data-product-category="{{#each product.category}}{{#if @last}}{{this}}{{else}}{{this}}, {{/if}}{{/each}}" data-product-brand="{{product.brand.name}}" data-product-price="{{#if product.price.with_tax}}{{product.price.with_tax.value}}{{else}}{{product.price.without_tax.value}}{{/if}}" data-product-variant="single-product-option"{{/if}}>
+    <div class="halo-productView-left productView-images zoom-image" data-image-gallery>
+        <div class="productView-image-wrapper">
+            
+            {{#each product.category}}   
+                {{#contains this '10% de descuento'}}
+                <div class="productView-image--sale" style="--url: url(//www.superhairpieces.es/content/images/marketing/promo/10pOFF.svg)"></div>                                            
+                {{else contains this '15% de descuento'}}
+                <div class="productView-image--sale" style="--url: url(//www.superhairpieces.es/content/images/marketing/promo/15pOFF.svg)"></div>      
+                {{else contains this '90€ de descuento'}}
+                <div class="productView-image--sale" style="--url: url(//www.superhairpieces.es/content/images/marketing/promo/90OFF.svg)"></div>
+                {{else contains this '50€ de descuento'}}
+                <div class="productView-image--sale" style="--url: url(//www.superhairpieces.es/content/images/marketing/promo/50OFF.svg)"></div>   
+                {{else contains this '20€ de descuento'}}
+                <div class="productView-image--sale" style="--url: url(//www.superhairpieces.es/content/images/marketing/promo/20OFF.svg)"></div>     
+                
+                {{/contains}}
+            {{/each}}
+            
+            {{#if theme_settings.halo-label-product}}
+                <div class="halo-badges">
+                    {{#each productsnew}}
+                        {{#if id '==' ../product.id}}
+                            <div class="new-badge halo-badge">
+                                <span class="text">{{lang 'products.new_label'}}</span>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                    {{#each product.custom_fields}}
+                        {{#if name '===' '__customlabel'}}
+                            <div class="custom-badge halo-badge">
+                                <span class="text">{{{value}}}</span>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                    {{#unless product.can_purchase}}
+                        {{#if product.out_of_stock}}
+                            {{#if product.out_of_stock_message}}
+                                <div class="soldOut-badge halo-badge">
+                                    <span class="text">{{lang 'products.sold_out_label'}}</span>
+                                </div>
+                            {{else}}
+                                <div class="soldOut-badge halo-badge">
+                                    <span class="text">{{lang 'products.sold_out_label'}}</span>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/unless}}
+                </div>
+            {{/if}}
+            <div class="productView-nav"
+                data-slick='{
+                    "fade": true,
+                    "arrows": false,
+                    "dots": false,
+                    "infinite": false,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                    "asNavFor": ".productView-slick .halo-productView-left .productView-for"
+                }'>
+                {{#if product.images.length}}
+                    {{#each product.images}}
+                        <div>
+                            <figure class="productView-image" data-fancybox="images" href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}" 
+                                data-image-gallery-main
+                                data-zoom-image="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}">
+                                <div class="productView-img-container">
+                                    <a href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"{{#if @first}}{{#if ../../schema}} itemprop="image"{{/if}}{{/if}}>
+                                        {{> components/common/responsive-img
+                                            image=this
+                                            class="productView-image--default"
+                                            fallback_size=../theme_settings.product_size
+                                            lazyload="disabled"
+                                            default_image=../theme_settings.default_image_product
+                                            otherAttributes="data-main-image"
+                                        }}
+                                    </a>
+                                </div>
+                            </figure>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <div class="productView-nav noImage">
+                        <figure class="productView-image is-error">
+                            <div class="productView-img-container">
+                                <img class="productView-image--default lazyload"
+                                 data-sizes="auto"
+                                 src="{{cdn 'img/loading.svg'}}"
+                                 data-src="{{getImage product.main_image 'product_size' (cdn theme_settings.default_image_product)}}"
+                                 alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}" data-main-image>
+                            </div>
+                        </figure>
+                    </div>
+                {{/if}}    
+                {{#if product.videos.list.length}}
+                    {{#each product.videos.list}}
+                        <div>
+                            <figure class="productView-image">
+                                <div class="productView-img-container">
+                                    <a href="//www.youtube.com/embed/{{id}}">
+                                        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="//i.ytimg.com/vi/{{id}}/hqdefault.jpg"/ data-sizes="auto" alt="YouTube video">
+                                    </a>
+                                    <div class="productView-video">
+                                        <div data-youtube="{{id}}"></div>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    {{/each}}
+                {{/if}}
+            </div>
+            <div class="halo-zoom">
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
+                <span class="text">{{lang 'products.zoom'}}</span>
+            </div>
+            {{> components/halothemes/products/halo-compare-colors}}
+        </div>
+        <div class="productView-thumbnail-wrapper">
+            
+            <div class="productView-for" data-slick='{
+                "arrows": true,
+                "dots": false,
+                "infinite": false,
+                "focusOnSelect": true,
+                "slidesToShow": 6,
+                "slidesToScroll": 1,
+                "asNavFor": ".productView-slick .halo-productView-left .productView-nav",
+                "nextArrow": "<svg class=&apos;slick-next slick-arrow&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+                "prevArrow": "<svg class=&apos;slick-prev slick-arrow&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>",
+                "responsive": [
+                    {
+                        "breakpoint": 1025,
+                        "settings": {
+                            "slidesToShow": 5,
+                            "slidesToScroll": 1
+                        }
+                    },
+                    {
+                        "breakpoint": 415,
+                        "settings": {
+                            "slidesToShow": 4,
+                            "slidesToScroll": 1
+                        }
+                    },
+                    {
+                        "breakpoint": 321,
+                        "settings": {
+                            "slidesToShow": 3,
+                            "slidesToScroll": 1
+                        }
+                    }
+                ]
+            }'>
+                {{#each product.images}}
+                    <div>
+                        <div class="productView-thumbnail">
+                            <a
+                                class="productView-thumbnail-link"
+                                href="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
+                                data-image-gallery-item
+                                data-image-gallery-new-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.product_size}}"
+                                data-image-gallery-new-image-srcset="{{getImageSrcset this use_default_sizes=true}}"
+                                data-image-gallery-zoom-image-url="{{getImageSrcset this (cdn ../theme_settings.default_image_product) 1x=../theme_settings.zoom_size}}"
+                            >
+                            {{> components/common/responsive-img
+                                image=this
+                                fallback_size=../theme_settings.productview_thumb_size
+                                lazyload=../theme_settings.lazyload_mode
+                            }}
+                            </a>
+                        </div>
+                    </div>
+                {{/each}}
+                 
+                {{#if product.videos.list.length}}
+                    {{#each product.videos.list}}
+                        <div>
+                            <div class="productView-thumbnail">
+                                <a
+                                    class="productView-thumbnail-link productView-thumbnail-linkVideo"
+                                    href="//www.youtube.com/embed/{{id}}"
+                                    data-image-gallery-item
+                                >
+                                    <span class="videoText">
+                                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-video-product"></use></svg>
+                                        <span class="text">{{lang 'products.video'}}</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="halo-productView-right">
+
+        {{> components/halothemes/products/halo-next-products}}
+
+        <div class="productView-details">
+            <div class="productView-product">
+                {{#if product.brand}}
+                    <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                        <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
+                    </h2>
+                {{/if}}
+                <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
+                <div class="productView-topInfo">
+                    <div id="reviewMain" style="font-size: 16px;display: flex;"></div>
+                   
+                </div>
+                <div class="productView-info">
+                    {{#if product.sku}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name sku-label">{{lang 'products.sku'}}</span>
+                            <span class="productView-info-value" data-product-sku{{#if schema}} itemprop="sku"{{/if}}>{{product.sku}}</span>
+                        </div>
+                    {{/if}}
+                    {{#if product.upc}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name upc-label">{{lang 'products.upc'}}</span>
+                            <span class="productView-info-value" data-product-upc>{{product.upc}}</span>
+                            {{#if schema}}
+                                {{#if product.mpn}}<meta itemprop="mpn" content="{{product.mpn}}" />{{/if}}
+                                {{#if product.gtin}}<meta itemprop="gtin" content="{{product.gtin}}" />{{/if}}
+                            {{/if}}
+                        </div>
+                    {{/if}}
+                    {{#if product.condition}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.condition'}}</span>
+                            <span class="productView-info-value">{{product.condition}}</span>
+                        </div>
+                    {{/if}}
+                    {{#if product.availability}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.availability'}}</span>
+                            <span class="productView-info-value">{{product.availability}}</span>
+                        </div>
+                    {{/if}}
+                    {{#all product.weight theme_settings.show_product_weight}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.weight'}}</span>
+                            <span class="productView-info-value" data-product-weight>{{product.weight}}</span>
+                        </div>
+                    {{/all}}
+                    {{#all product.width product.height product.depth theme_settings.show_product_dimensions}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.width'}}</span>
+                            <span class="productView-info-value" data-product-width>
+                                {{product.width}}
+                                {{#if settings.measurements.length '==' 'Centimeters'}}
+                                    ({{lang 'products.measurement.metric'}})
+                                {{else}}
+                                    ({{lang 'products.measurement.imperial'}})
+                                {{/if}}
+                            </span>
+                        </div>
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.height'}}</span>
+                            <span class="productView-info-value" data-product-height>
+                                {{product.height}}
+                                {{#if settings.measurements.length '==' 'Centimeters'}}
+                                    ({{lang 'products.measurement.metric'}})
+                                {{else}}
+                                    ({{lang 'products.measurement.imperial'}})
+                                {{/if}}
+                            </span>
+                        </div>
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.depth'}}</span>
+                            <span class="productView-info-value" data-product-depth>
+                                {{product.depth}}
+                                {{#if settings.measurements.length '==' 'Centimeters'}}
+                                    ({{lang 'products.measurement.metric'}})
+                                {{else}}
+                                    ({{lang 'products.measurement.imperial'}})
+                                {{/if}}
+                            </span>
+                        </div>
+                    {{/all}}
+                    {{#if product.min_purchase_quantity}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.min_purchase_quantity'}}</span>
+                            <span class="productView-info-value">{{lang 'products.purchase_units' quantity=product.min_purchase_quantity}}</span>
+                        </div>
+                    {{/if}}
+                    {{#if product.max_purchase_quantity}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.max_purchase_quantity'}}</span>
+                            <span class="productView-info-value">{{lang 'products.purchase_units' quantity=product.max_purchase_quantity}}</span>
+                        </div>
+                    {{/if}}
+                    {{#if product.gift_wrapping_available}}
+                        <div class="productView-info-item">
+                            <span class="productView-info-name">{{lang 'products.gift_wrapping'}}</span>
+                            <span class="productView-info-value">{{lang 'products.gift_wrapping_available'}}</span>
+                        </div>
+                    {{/if}}
+                    {{#if product.shipping}}
+                        {{#if product.shipping.calculated}}
+                            <div class="productView-info-item">
+                                <span class="productView-info-name">{{lang 'products.shipping'}}</span>
+                                <span class="productView-info-value">{{lang 'products.shipping_calculated'}}</span>
+                            </div>
+                        {{else}}
+                            {{#if product.shipping.price.value '===' 0}}
+                                <div class="productView-info-item">
+                                    <span class="productView-info-name">{{lang 'products.shipping'}}</span>
+                                    <span class="productView-info-value">{{lang 'products.shipping_free'}}</span>
+                                </div>
+                            {{else}}
+                                <div class="productView-info-item">
+                                    <span class="productView-info-name">{{lang 'products.shipping'}}</span>
+                                    <span class="productView-info-value">{{lang 'products.shipping_fixed' amount=product.shipping.price.formatted}}</span>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                    {{#each product.custom_fields}}
+                        {{#startsWith '__' name}}
+                        {{else}}
+                            {{#unless name '==' 'Highlight'}}
+                                <div class="productView-info-item">
+                                    <span class="productView-info-name {{chop name}}">{{name}}:</span>
+                                    <span class="productView-info-value {{chop name}}">{{{ sanitize value}}}</span>
+                                </div>
+                            {{/unless}}
+                        {{/startsWith}}
+                    {{/each}}
+                    {{#if settings.bulk_discount_enabled}}
+                        {{#if product.bulk_discount_rates.length}}
+                            {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+
+                {{> components/halothemes/products/halo-product-countdown custom_fields=product.custom_fields id=product.id}}
+
+                <div class="productView-price">
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}                        
+                        {{> components/products/price price=product.price schema_org=schema}}
+                    {{else}}
+                        {{> components/common/login-for-pricing}}
+                    {{/or}}
+                    {{#if product.call_for_price}}
+                        <p><span>{{product.call_for_price}}</span></p>
+                    {{/if}}
+                </div>
+                {{{region name="product_below_price"}}}
+
+                {{#if product.detail_messages}}
+                    <div class="productView-messages">
+                        {{product.detail_messages}}
+                    </div>
+                {{/if}}
+
+                <div class="productView-bottomInfo" {{#unless product.description}}style="display:none"{{/unless}}>
+                    <div class="productView-shortDesc">                            
+                    </div>
+                    <div class="productView-moreDesc">
+                        <a class="link" href="#"> 
+                            <span>{{lang 'common.more_details'}}</span>
+                        </a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="productView-details">
+            <div class="productView-options">
+                {{#if product.release_date }}
+                    <p class="productView-releaseDate">{{product.release_date}}</p>
+                {{/if}}
+                <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
+                      data-cart-item-add>
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="product_id" value="{{product.id}}"/>
+                    {{#if product.options}}
+                        <div class="productView-optionsLabel">{{lang 'products.choose_options'}}:</div>
+                    {{/if}}
+                    <div data-product-option-change style="display:none;">
+                        {{#each product.options}}
+                            {{{dynamicComponent 'components/products/options'}}}
+                        {{/each}}
+                    </div>
+                    {{#if theme_settings.halo_stock_level}}
+                        <div class="productView-optionsStock u-hiddenVisually">
+                            <span>{{lang 'products.stock_hurry_up'}}</span><span data-stock-left></span><span>{{lang 'products.stock_left'}}</span>
+                        </div>
+                    {{/if}}
+                    {{#unless theme_settings.halo_stock_level}}
+                        <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}} form-field--stock-level">
+                            <label class="form-label form-label--alternate">
+                                {{lang 'products.current_stock'}}
+                                <span data-product-stock>{{product.stock_level}}</span>
+                            </label>
+                        </div>
+                        <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}} form-field--delivery" style="display: none;">
+                            <label class="form-label form-label--alternate">
+                                {{lang 'products.shipout_time'}}
+                                <span data-time-shipout></span>
+                            </label>
+                        </div>
+                    {{/unless}}
+                    {{#each product.custom_fields}}
+                        {{#if name '===' '__sizechart'}}
+                            {{> components/halothemes/products/halo-product-size-chart settings=../../settings}}
+                        {{/if}}
+                    {{/each}}
+                    {{#if product.options}}
+                        {{> components/products/add-to-cart}}
+                    {{else}}
+                        {{#if product.can_purchase}}
+                            {{> components/products/add-to-cart}}
+                        {{/if}}
+                        {{#if product.out_of_stock}}
+                            <div class="productView-actions">
+                                {{#if product.out_of_stock_message}}
+                                    <div class="form-action form-action2">
+                                        <span class="form-action-text">
+                                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-info2"></use></svg>
+                                            <span class="text">{{product.out_of_stock_message}}</span>
+                                        </span>
+                                    </div>
+                                {{else}}
+                                    <div class="form-action form-action2">
+                                        <span class="form-action-text">
+                                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-info2"></use></svg>
+                                            <span class="text">{{lang products.sold_out}}</span>
+                                        </span>
+                                    </div>
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                </form>
+                {{#if settings.show_wishlist}}
+                    {{> components/common/wishlist-dropdown}}
+                {{/if}}
+            </div>
+
+            {{> components/halothemes/products/halo-notify-me-out-of-stock}}
+
+            {{#if theme_settings.product_viewingProduct}}
+                <div class="productView-ViewingProduct u-hiddenVisually">
+                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye"></use></svg>5 customers are viewing this product
+                </div>
+            {{/if}}
+
+            {{#if theme_settings.product_info_tabs}}
+                <div class="productView-infoTabs">
+                    <ul class="productView-infoTab">
+                        <li class="item">
+                            <a href="#halo-productView-description">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-info"></use></svg>
+                                <span class="text">{{lang 'products.details_tab'}}</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#halo-productView-tabs">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-truck"></use></svg>
+                                <span class="text">{{lang 'products.shipping_tab'}}</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#halo-productView-about">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chat"></use></svg>
+                                <span class="text">{{lang 'products.about_tab'}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            {{/if}}
+
+            {{#if theme_settings.product_share_button}}
+                <div class="productView-share">
+                    <div class="productView-shareLabel"><span>{{lang 'common.share'}}:</span></div>
+                    {{> components/common/share}}
+                </div>
+            {{/if}}
+
+            {{> components/halothemes/products/halo-product-security-image}}
+        </div>
+    </div>
+
+    {{> components/halothemes/products/halo-sticky-add-to-cart}}
+</div>
+{{#if settings.show_product_reviews}}
+    {{> components/products/modals/writeReview}}
+{{/if}}
+<script type="text/javascript" charset="utf-8">
+    var sku = "{{product.sku}}";
+    var despLabel = "{{lang 'products.description'}}";   
+    var player; 
+</script>
+<script src="https://www.youtube.com/iframe_api" defer></script>
+<script>
+/**
+ * @summary setup youtube api with new id
+*/
+function onYouTubeIframeAPIReady() {    
+    player = new YT.Player('video-main', {
+        host: `${window.location.protocol}//www.youtube.com`,
+        playerVars: { 
+            'autoplay': 1,
+            'controls': 0,            
+            'origin': window.location.protocol+"//"+window.location.host
+        },
+        events: {
+            'onReady': onPlayerReady          
+        }
+    });
+}
+/**
+ * @summary event trigger when youtube player is ready
+ * 
+ * @param {youtube event} event The event action from youtube api
+ * 
+*/
+function onPlayerReady(event) {  
+    event.target.playVideo();
+}
+/**
+ * @summary Set main video for video section
+ * 
+ * @param {DOM object} input Object which are clicked
+*/
+function setMainVideo(input) {
+    let $input = $(input);
+    let url = $input.attr("url");
+    $(".video-main").remove();
+    $(".desp-video-wrap").prepend(`<iframe id="video-main" class="video-main" width="560" height="315" src="${url}?enablejsapi=1&origin=${window.location.protocol}//${window.location.host}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)        
+    if ($(window).width()<=783) {
+        let target = document.querySelector("#video-main");
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }
+    onYouTubeIframeAPIReady();
+}
+/**
+ * @summary Fill out video to product view
+ * 
+ * @param {json} content Data content to fill and load
+ * @param {int} idx Index in the Array
+*/
+function loadVideo(content,idx) {
+    fetch(content.value)
+    .then(r=>r.json())
+    .then(r=>{        
+        if (r.list) {
+            let ct="";
+            let topVideo;
+            for(let cc of r.list) {
+                let url = cc.link.replace("watch?v=","embed/");
+                let id = cc.link.split("=").reverse()[0];
+                if (ct.length==0) {
+                    topVideo = `<iframe class="video-main" width="560" height="315" src="${url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                }
+                ct+=`<a class="video-wrap" id="${id}" url="${url}" onClick="setMainVideo(this)">
+                        <div class="img-wrap"><img loading="lazy" src="https://img.youtube.com/vi/${id}/mqdefault.jpg"/></div>
+                        <div>${cc.name}</div>
+                    </a>`;
+            }            
+            ct=`${topVideo}<div class="content-wrap">${ct}</div>`;
+            fillContent(content.name, ct, idx,"desp-video-wrap hidden");
+        }
+    })
+    .catch(e=>console.log(e));
+}
+/**
+ * @summary Fill out warranty to product view
+ * 
+ * @param {json} content Data content to fill and load
+ * @param {int} idx Index in the Array
+*/
+function loadWarranty(content,idx) {
+    fetch(content.value)
+    .then(r=>r.json())
+    .then(r=>{        
+        if (r.content) {
+            let ct="";
+            for(let cc of r.content) {
+                ct+=`<p>${cc}</p>`;
+            }
+            fillContent(content.name, ct, idx,"", true);
+        }
+    })
+    .catch(e=>console.log(e));
+}
+/**
+ * @summary Fill out color chart to product view
+ * 
+ * @param {json} content Data content to fill and load
+ * @param {int} idx Index in Array
+*/
+function loadColorChart(content, idx) {
+    // console.log(content.value);
+    fetch(content.value)
+    .then(r=>r.json())
+    .then(r=> {        
+        // console.log(r);
+        if (r.position) {
+            let ct = "";
+            for (let l of r.list) {
+                ct+=`<div class="c-item">
+                        <img src="${l.url}" loading="lazy" style="object-position: ${r.position}"/>                            
+                        <div class="name" en>${l["en-name"]?l["en-name"]:""}</div>
+                    </div>`;
+            }
+            fillContent(content.name, ct, idx, "desp-color-wrap hidden");                
+        }
+    })
+    .catch(e=>console.log(e));
+}
+/**
+ * @summary Fill out feature to product view
+ * 
+ * @param {json} content Data content to fill
+ * @param {int} idx Index in Array
+*/
+function loadFeature(content, idx) {
+    let ct = "";
+    for (let key in content.value) {
+        // ct+=`<div class="item item-${key}"><div class="item-text">${content.value[key]}</div></div>`;
+        let val = content.value[key].split(":");
+        // console.log(val);
+        if (val.length>1) {
+            let label = val[0];
+            val.shift();
+            ct+=`<div class="item item-${key}">
+                    <div class="item-text">
+                        <div class="label">${label}:</div>
+                        <div>${val.join(",")}</div>
+                    </div>
+                </div>`;
+        } else {
+            ct+=`<div class="item item-${key}"><div class="item-text">${content.value[key]}</div></div>`;
+        }
+    }
+    fillContent(content.name, ct, idx, "desp-feature-wrap");
+}
+/**
+ * @summary Fill out detail to product view
+ * 
+ * @param {json} content Data content to fill
+ * @param {int} idx Index in Array
+*/
+function loadDetail(content, idx) {
+    let ct = "";
+    for (let v of content.value) {
+        ct+=`
+        <div class="item">
+            <div class="desp-title">${v.name}</div>
+            <div>${v.value}</div>
+        </div>
+        `;
+    }
+    fillContent(content.name, ct, idx, "desp-wrap");
+}
+/**
+ * @summary Fill out content in description
+ * 
+ * @param {string} name Name of header
+ * @param {string} content HTML content to fill
+ * @param {int} idx Index in Array
+ * @param {string} cl Class name specific of this content
+*/
+function fillContent(name, content,idx, cl, isWarranty=false) {
+    if ($(".card.warranty").length>0) {
+        $(".card.warranty").before(`
+        <div class="card">
+            <div class="card-header" id="desc-${idx}-title">
+                <button class="title ${idx==0?"collapsed":""}" data-toggle="collapse" data-target="#desc-${idx}-content" aria-expanded="true" aria-controls="desc-${idx}-content" onclick="productTabToggle(this)">
+                    <img src="${name}"/>
+                </button>
+                <span class="icon-plus">&nbsp;</span>
+            </div>
+            <div id="desc-${idx}-content" class="collapse" aria-labelledby="desc-${idx}-title" data-parent="#accordion" ${idx==0?"style='display:block'":""}>
+                <div class="card-body productView-description{{#if product.warranty}} has-warranty{{/if}}" {{#if settings.data_tag_enabled}} data-event-type="product" {{/if}} ${cl.includes("desp-video-wrap")?"video":""}>
+                    <div class="${cl}">
+                        ${content}
+                    </div>
+                </div>
+            </div>
+        </div>
+        `);
+    } else {
+        $("[section=description]").append(`
+        <div class="card ${isWarranty?"warranty":""}">
+            <div class="card-header" id="desc-${idx}-title">
+                <button class="title ${idx==0?"collapsed":""}" data-toggle="collapse" data-target="#desc-${idx}-content" aria-expanded="true" aria-controls="desc-${idx}-content" onclick="productTabToggle(this)">
+                    <img src="${name}"/>
+                </button>
+                <span class="icon-plus">&nbsp;</span>
+            </div>
+            <div id="desc-${idx}-content" class="collapse" aria-labelledby="desc-${idx}-title" data-parent="#accordion" ${idx==0?"style='display:block'":""}>
+                <div class="card-body productView-description{{#if product.warranty}} has-warranty{{/if}}" {{#if settings.data_tag_enabled}} data-event-type="product" {{/if}} ${cl.includes("desp-video-wrap")?"video":""}>
+                    <div class="${cl}">
+                        ${content}
+                    </div>
+                </div>
+            </div>
+        </div>
+        `);
+    }
+    if (cl.includes("desp-color-wrap")) {
+        $(".desp-color-wrap").append(`<button class="show-more">show more</button>`);
+        $(".desp-color-wrap .show-more").on("click", function() {
+            let $parent = $(this).parents(".desp-color-wrap");
+            if ($parent.hasClass("hidden")) {
+                $parent.removeClass("hidden");
+                $(this).text("Show Less");
+            } else {
+                $parent.addClass("hidden");
+                $(this).text("Show More");
+            }
+        })
+    } else if (cl.includes("desp-video-wrap")) {
+        $(".desp-video-wrap").append(`<button class="show-more">show more</button>`);
+        $(".desp-video-wrap .show-more").on("click", function() {
+            let $parent = $(this).parents(".desp-video-wrap");
+            if ($parent.hasClass("hidden")) {
+                $parent.removeClass("hidden");
+                $(this).text("Show Less");
+            } else {
+                $parent.addClass("hidden");
+                $(this).text("Show More");
+            }
+        })
+    }
+}
+/**
+ * @summary Toggle product detail
+ * 
+ * @param {DOM object} el clickable object for toggle
+*/
+function productTabToggle(el){
+    let $target = $(el);        
+
+    $('.productView-tabs .card .title').not($target).removeClass('collapsed');
+
+    if($target.hasClass('collapsed')){
+        $target.removeClass('collapsed');
+    } else{
+        $target.addClass('collapsed');
+    }
+
+    $('.productView-tabs .card').each((index, element) =>{
+        if($('.title', element).hasClass('collapsed')){
+            $(element).find('.collapse').slideDown("slow");
+        } else{
+            $(element).find('.collapse').slideUp("slow");
+        }
+    });
+}
+
+/**
+ * @summary Load product's json data
+ * 
+ * @param {string} filePath Init the path of json file
+ * @param {string} lang ISO code of language (i.e en, nl)
+*/
+function loadData(lang, filePath="") {  
+    console.log("load json");
+    if (lang != "nl") {
+        filePath = `/content/data/products/${sku.toUpperCase()}-${lang}.json`;
+    } else {
+        filePath = `/content/data/products/${sku.toUpperCase()}.json`;
+    }
+    console.log(filePath);
+    
+    fetch(filePath, {
+        headers: {
+            accept: "application/json"
+        }
+    })
+    .then(r=>r.json())
+    .then(r=>{
+        console.log(r)
+        if (r.short_description) {
+            let ds = "";
+            for (let ss of r.short_description) {
+                ds+=`<li>${ss}</li>`;
+            }
+            $(".productView-shortDesc").html(`<ul>${ds}</ul>`);
+            $(".productView-bottomInfo").show();
+        }
+        if (r.long_description) {
+            $("[section=description]").html("");
+            for (const [idx, c] of r.long_description.entries()) {
+                // console.log(c);
+                if (c.id=="detail") {
+                    loadDetail(c, idx);
+                } else if (c.id=="feature") {
+                    loadFeature(c, idx);
+                } else if (c.id=="color-chart") {
+                    loadColorChart(c, idx);
+                } else if (c.id=="video") {
+                    loadVideo(c, idx);
+                } else if (c.id=="warranty") {
+                    loadWarranty(c, idx);
+                }
+            }
+        }
+    })
+    .catch(e=>{
+        console.log(e);
+        $("[section=description]").prepend(`
+        <div class="card">
+            <div class="card-header" id="desc-1-title">
+                <button class="title collapsed" data-toggle="collapse" data-target="#faqs-1-content" aria-expanded="true" aria-controls="faqs-1-content">
+                    ${despLabel}
+                </button>
+                <span class="icon-plus">&nbsp;</span>
+            </div>
+            <div id="faqs-1-content" class="collapse" aria-labelledby="desc-1-title" data-parent="#accordion" style="display:block">
+                <div class="card-body default {{#if product.warranty}} has-warranty{{/if}}">                        
+                </div>
+            </div>
+        </div>
+        `);
+        $("[section=description]").find("[section=hidden]").appendTo($(".card-body.default")).css({"display":"block"}); 
+        // productTabToggle();
+    })
+    // $.getJSON(filePath, {
+    //     format: "json"
+    // })
+    // .done(function(r){    
+    //     console.log(r);
+    //     if (r.short_description) {
+    //         let ds = "";
+    //         for (let ss of r.short_description) {
+    //             ds+=`<li>${ss}</li>`;
+    //         }
+    //         $(".productView-shortDesc").html(`<ul>${ds}</ul>`);
+    //         $(".productView-bottomInfo").show();
+    //     }
+    //     if (r.long_description) {
+    //         $("[section=description]").html("");
+    //         for (const [idx, c] of r.long_description.entries()) {
+    //             // console.log(c);
+    //             if (c.id=="detail") {
+    //                 loadDetail(c, idx);
+    //             } else if (c.id=="feature") {
+    //                 loadFeature(c, idx);
+    //             } else if (c.id=="color-chart") {
+    //                 loadColorChart(c, idx);
+    //             } else if (c.id=="video") {
+    //                 loadVideo(c, idx);
+    //             } else if (c.id=="warranty") {
+    //                 loadWarranty(c, idx);
+    //             }
+    //         }
+    //     }
+    //     // productTabToggle();
+    // })
+    // .fail(function(e) {
+    //     console.log(e);
+    //     $("[section=description]").prepend(`
+    //     <div class="card">
+    //         <div class="card-header" id="desc-1-title">
+    //             <button class="title collapsed" data-toggle="collapse" data-target="#faqs-1-content" aria-expanded="true" aria-controls="faqs-1-content">
+    //                 ${despLabel}
+    //             </button>
+    //             <span class="icon-plus">&nbsp;</span>
+    //         </div>
+    //         <div id="faqs-1-content" class="collapse" aria-labelledby="desc-1-title" data-parent="#accordion" style="display:block">
+    //             <div class="card-body default {{#if product.warranty}} has-warranty{{/if}}">                        
+    //             </div>
+    //         </div>
+    //     </div>
+    //     `);
+    //     $("[section=description]").find("[section=hidden]").appendTo($(".card-body.default")).css({"display":"block"}); 
+    //     // productTabToggle();
+    // })  
+}
+/**
+ * Copy coupon code
+*/
+function xcopy(str){        
+        var oInput = document.createElement('input');
+        oInput.value = str;
+        oInput.className = 'oInput';
+        document.body.appendChild(oInput);
+        oInput.select();
+        document.execCommand("Copy");
+        oInput.style.display='none';
+        oInput.parentNode.removeChild(oInput);           
+        $("picture[before]").hide();
+        $("picture[after]").show()
+}
+window.addEventListener("DOMContentLoaded", function() {
+    // let sku = "{{product.sku}}";
+    if (location.href.includes("en.superhairpieces.es")) {
+        loadData("en");
+    } else {
+        loadData("nl");
+    }
+    // Weglot.on("switchersReady", function() {                
+    //     let lang = Weglot.getCurrentLang();        
+    //     loadData(lang);
+    // })    
+    // Weglot.on("languageChanged", function(newLang, prevLang) {        
+    //     if (newLang != prevLang && prevLang) {
+    //         loadData(newLang);
+    //     }        
+    // })
+});
+</script>

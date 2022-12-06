@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ resourceHints }}}
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            {{!-- Change document class from no-js to js so we can detect this in css --}}
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        </script>
+
+        {{> components/common/polyfill-script }}
+
+        {{!-- Load Lazysizes script ASAP so images will appear --}}
+        <script>
+            {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.loadMode = 1;
+        </script>
+        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js'}}"></script>
+        {{{stylesheet '/assets/css/theme.css'}}}
+
+        {{{head.scripts}}}
+
+        {{~inject 'themeSettings' theme_settings}}
+        {{~inject 'showAdminBar' theme_settings.show-admin-bar}}
+        {{~inject 'genericError' (lang 'common.generic_error')}}
+        {{~inject 'maintenanceModeSettings' settings.maintenance}}
+        {{~inject 'adminBarLanguage' (langJson 'admin')}}
+        {{~inject 'urls' urls}}
+        {{~inject 'secureBaseUrl' settings.secure_base_url}}
+        {{~inject 'cartId' cart_id}}
+        {{~inject 'channelId' settings.channel_id}}
+        {{~inject 'template' template}}
+        {{~inject "zoomSize" theme_settings.zoom_size}}
+        {{~inject "productSize" theme_settings.product_size}}
+        {{~inject 'token' settings.storefront_api.token}}
+        {{~inject 'money' settings.money}}  
+
+    </head>
+    <body class="page-type-{{page_type}} page-full-width{{#if theme_settings.halo_add_to_cart_popup '==' 'normal'}} popup-normal{{/if}}{{#unless theme_settings.halo_homepage_layout_1}} home-layout-2{{/unless}}">
+        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+        {{> components/common/header }}
+        {{> components/common/body }}
+        {{> components/common/footer }}
+        <div class="popup-country">
+            <div class="popup-country-overlay"></div>
+            <div class="popup-country-content">
+                <div class="popup-country-title"></div>
+                <div class="popup-country-main"></div> 
+                <div class="popup-country-main2">
+                    <div class="popup-country1">
+                        <div class="popup-country-flag"></div>
+                        <div class="popup-country-sec">
+                            <a class="popup-country-lang"></a>
+                            <a class="popup-country-lang1"></a>
+                        </div>
+                    </div>
+                    <div class="popup-country2">
+                        <div class="popup-country-flag1"></div>
+                        <div class="popup-country-sec">
+                            <a class="popup-country-lang2"></a>
+                            <a class="popup-country-lang3"></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="halo-background"></div>
+        <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+        <script>
+            {{!-- Exported in app.js --}}
+            window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+        <script type="text/javascript" src="https://kenwheeler.github.io/slick/slick/slick.js" defer></script>
+        {{{footer.scripts}}}
+
+        {{> components/halothemes/halo-newsletter-popup}}
+        {{> components/halothemes/halo-recently-bought-product}}
+        {{> components/halothemes/halo-recently-viewed-products}}
+        {{> components/halothemes/sidebar/halo-sidebar}}
+        {{> components/halothemes/halo-ask-an-expert}}
+        {{> components/halothemes/halo-megamenu}}
+        
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='es';location.href=location.protocol+'//'+(lang == 'es' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+
+            /* ]]> */
+            window.addEventListener("DOMContentLoaded", function() {
+                if (location.href.includes("en.superhairpieces.es")) {
+                    document.querySelector(".nav-language-wrap span").innerHTML=`<img src="/content/images/common/flag-uk.svg" alt="English"/>`
+                    document.querySelector(".nav-language-wrap li[lang=en]").style.fontWeight="bold";
+                    document.querySelector(".navPages-language div[lang=en]").style.fontWeight="bold";
+                } else {
+                    document.querySelector(".nav-language-wrap span").innerHTML=`<img src="/content/images/common/flag-es.png" alt="Spanish"/>`
+                    document.querySelector(".nav-language-wrap li[lang=es]").style.fontWeight="bold";
+                    document.querySelector(".navPages-language div[lang=es]").style.fontWeight="bold";
+                }        
+                $(".nav-language-wrap span").on("click", function() {
+                    $(".nav-language-wrap .nav-language-selection-wrap").toggle();
+                })
+            })
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,555 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+        summary: 160
+---
+{{#partial "hero"}}
+    {{#if carousel}}
+        {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows}}
+    {{/if}}
+    {{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+<style>
+    :root {
+        --color1: #f1f1f1;
+        /* --color2: #BD1E51; */
+        --color2: #af1c27;
+        --color3: #f5f5f5;
+        --font-size1: 40px;
+        --font-size2: 16px;
+        --font-size3: 13px;
+        --font-size4: 14px;
+        --font-size5: 12px;
+        --font-size6: 9px;
+        --border-radius: 3px;
+        --padding-top: 5px;
+        --padding-side: 15px;
+        --element-margin: 10px;
+    }    
+    .halo-block.halo-block-product .halo-block-header {
+        height: 1px;
+        overflow: hidden;
+        margin: 0;
+    }
+    .halo-fullwidth-banner {
+        margin-top: 0;
+    }
+    .focus-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 15px;
+        width: 100%;
+        color: var(--color3);
+    }
+    .focus-wrap img.background {
+        position: absolute;
+        width: 100%;
+        height: 100%;        
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        object-position: left bottom;
+    } 
+    .focus-wrap .content-wrap {
+        background-color: rgba(21,21,1,0.8);
+        width: calc(100% - 30px);
+        max-width: 842px;
+        padding: 15px;
+        text-align: center;
+        z-index: 0;
+    }
+    .focus-wrap .content-wrap .title {
+        font-size: var(--font-size4);
+        margin-bottom: var(--element-margin);
+        font-weight: bold;
+    }
+    .focus-wrap .content-wrap .content {
+        font-size: var(--font-size5);
+    }
+    .focus-wrap .author-wrap {
+        display: flex;
+        justify-content: flex-end;
+        font-size: var(--font-size6);
+        text-align: left;
+    }
+    .focus-wrap .author-wrap img {
+        width: 47px;
+        height: 47px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    .focus-wrap .author-wrap .name {
+        font-size: var(--font-size5);    
+        font-weight: bold;    
+    }
+    @media (min-width: 600px) {
+        :root {
+            --font-size4: 16px;
+            --font-size5: 13px;
+            --font-size6: 11px;
+        }
+        .focus-wrap .content-wrap {
+            padding: 1rem 2rem;
+        }
+    }    
+</style>
+<style>
+    .faq-container {
+        padding: 0 15px;
+    }
+    .faq-container .title {
+        padding: 38px 0;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .faq-container .title[pc] {
+        display: none;
+    }
+    .faq-container .item {
+        background: #f5f5f5;
+        margin-bottom: 10px;        
+        border-radius: 3px;
+        padding: 12px 15px;
+    }
+    .faq-container .item .question {
+        position: relative;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 700;
+        color: #5a5a5a;        
+        text-transform: unset;
+        text-align: left;        
+        margin: 0 0 1px 0;     
+        cursor: pointer;   
+    }
+    .faq-container .item .icon {
+        font-size: 0;
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 36px;
+        height: 36px;        
+        z-index: 2;
+        pointer-events: none;
+        transform: translateY(-50%);        
+    }
+    .faq-container .item .icon::before, .faq-container .item .icon::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        z-index: 2;
+        transition: all 0.3s ease;
+        transform: translate(50%, -50%);
+        background: #5a5a5a;
+    }
+    .faq-container .item.close .icon::before {
+        width: 2px;
+        height: 16px;
+    }
+    .faq-container .item.open .icon::before {
+        transform: translateY(-50%) rotate(90deg);
+    }    
+    .faq-container .item .icon::after {
+        width: 16px;
+        height: 2px;
+    }
+    .faq-container .item.close .answer{
+        display: none;
+    }    
+    .faq-container .item.open .answer {
+        padding-top: 27px;
+    }    
+    .faq-container .item .answer {        
+        transition: all 0.3s ease;
+        overflow: hidden;
+        will-change: opacity, max-height;
+    }
+    .faq-container .see-more {
+        text-align: right;
+        padding: 11px 13px 30px 0;
+    }
+    .faq-container .see-more a {
+        font-size: 16px;
+        font-style: italic;
+        color: #5a5a5a;
+        position: relative;
+    }
+    .faq-container .see-more span {        
+        background-image: linear-gradient(transparent 97%, #5a5a5a 3%);
+        background-repeat: repeat-x;
+        background-position-y: 0;
+    }
+    .faq-container .see-more a::after {
+        content: ">";
+        position: absolute;
+        font-size: 20px;
+        line-height: 1;
+        top: 2px;
+        right: -13px;
+    }
+    @media (min-width: 900px) {
+        .faq-container .title[pc] {
+            display: block;
+        }
+        .faq-container .title[mobile] {
+            display: none;
+        }
+    }
+    @media (min-width: 1025px) {
+        .faq-container {
+            padding: 0 30px;
+        }
+    }
+    @media (min-width: 1281px) {
+        .faq-container {
+            padding: 0 60px;
+            max-width: 1690px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+</style>
+<style>
+    .info__box {
+        background: #fff;
+        padding: 10px 20px;
+        margin: 30px 5px;
+        border-radius: var(--border-radius);
+        display: flex;
+    }
+    .info__text {
+        height: 20px;
+        border-radius: var(--border-radius);
+    }
+    .info__text_one {
+        width: 100%;
+    }
+    .info__text_two {
+        width: 70%;
+    }
+    .info__text_three {
+        width: 85%;
+    }
+    .info__box .left_box {
+        flex: 0 0 70%;
+        margin-right: auto;
+    }
+    .info__box .image {
+        height: 80px;
+        width: 80px;
+        border-radius: 25px;
+    }
+    .info__box .shinny {
+        background: lightgray;
+        margin: 10px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    .info__box .shinny::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        height: 100%;
+        transform: skew(5deg);
+        animation: shine infinite 1.5s ease-in-out;
+    }
+    @keyframes shine {
+        from {
+            transform: skew(45deg) translateX(0%);
+        }
+        to {
+            transform: skew(45deg) translateX(200%);
+        }
+    }
+</style>
+    {{#each shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+    <div class="main full">
+        <input type="hidden" name="store-token" value="{{settings.storefront_api.token}}">
+
+        {{#if theme_settings.halo_homepage_layout_1}}
+            {{#if theme_settings.home_product_block_tab '==' 'Featured'}}
+                {{> components/halothemes/halo-product-tab-by-category data-sort-tab="?sort=featured" productsnew=products.new title=theme_settings.home_product_block_tab-title}}
+            {{else if theme_settings.home_product_block_tab '==' 'New'}}
+                {{> components/halothemes/halo-product-tab-by-category data-sort-tab="?sort=newest" productsnew=products.new title=theme_settings.home_product_block_tab-title}}
+            {{else if theme_settings.home_product_block_tab '==' 'Top'}}
+                {{> components/halothemes/halo-product-tab-by-category data-sort-tab="?sort=bestselling" productsnew=products.new title=theme_settings.home_product_block_tab-title}}
+            {{/if}}
+            {{> components/halothemes/home/halo-banner banner="home-top-brands"}}
+            {{> components/halothemes/home/halo-banner banner="home-top-banners"}}
+            {{> components/halothemes/home/halo-banner banner="home2-top-banners"}}
+            {{> components/halothemes/home/halo-special-product title=theme_settings.home_product_block_special-title desc=theme_settings.home_product_block_special-text id=theme_settings.home_product_block_special-id}}
+            {{> components/halothemes/home/halo-banner banner="home-middle-banners"}}
+            {{#if theme_settings.home_product_block '==' 'Featured'}}
+                {{> components/products/featured products=products.featured productsnew=products.new title=theme_settings.home_product_block-title block_id="halo-product-block-1"}}
+            {{else if theme_settings.home_product_block '==' 'New'}}
+                {{> components/products/new products=products.new productsnew=products.new title=theme_settings.home_product_block-title block_id="halo-product-block-1"}}
+            {{else if theme_settings.home_product_block '==' 'Top'}}
+                {{> components/products/top products=products.top_sellers productsnew=products.new title=theme_settings.home_product_block-title block_id="halo-product-block-1"}}
+            {{else if theme_settings.home_product_block '==' 'Special'}}
+                {{> components/halothemes/halo-product-by-category cateid=theme_settings.home_product_block_id productsnew=products.new}}
+            {{/if}}
+            {{> components/halothemes/home/halo-banner banner="home-middle-banners-2"}}
+            {{> components/halothemes/home/home-icon-with-text2}}
+            {{> components/halothemes/home/halo-banner banner="home-parallax-banners"}}
+
+            {{> components/halothemes/halo-product-by-category-with-flash-deals 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_flash_deals_id 
+                cateImg=theme_settings.home_product_block_with_flash_deals_img 
+                cateImg2=theme_settings.home_product_block_with_flash_deals_img2 
+                cateTitle=theme_settings.home_product_block_with_flash_deals_title 
+                cateLink=theme_settings.home_product_block_with_flash_deals_link 
+                cateLink2=theme_settings.home_product_block_with_flash_deals_link2 
+                coutDown=theme_settings.home_product_block_with_flash_deals_count_down
+            }}
+
+            {{> components/halothemes/halo-product-by-category-with-banner 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_banner_1_id 
+                cateImg=theme_settings.home_product_block_with_banner-1-img 
+                cateTitle=theme_settings.home_product_block_with_banner-1-title 
+                cateSubHeading=theme_settings.home_product_block_with_banner-1-subheading 
+                cateHeading=theme_settings.home_product_block_with_banner-1-heading 
+                cateText1=theme_settings.home_product_block_with_banner-1-text1 
+                cateText2=theme_settings.home_product_block_with_banner-1-text2 
+                cateBtn=theme_settings.home_product_block_with_banner-1-btntext 
+                cateLink=theme_settings.home_product_block_with_banner-1-link
+            }}
+
+            {{> components/halothemes/halo-product-by-category-with-banner 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_banner_2_id 
+                cateImg=theme_settings.home_product_block_with_banner-2-img 
+                cateTitle=theme_settings.home_product_block_with_banner-2-title 
+                cateSubHeading=theme_settings.home_product_block_with_banner-2-subheading 
+                cateHeading=theme_settings.home_product_block_with_banner-2-heading 
+                cateText1=theme_settings.home_product_block_with_banner-2-text1 
+                cateText2=theme_settings.home_product_block_with_banner-2-text2 
+                cateBtn=theme_settings.home_product_block_with_banner-2-btntext 
+                cateLink=theme_settings.home_product_block_with_banner-2-link
+            }}
+
+            {{> components/halothemes/halo-product-by-category-with-banner 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_banner_3_id 
+                cateImg=theme_settings.home_product_block_with_banner-3-img 
+                cateTitle=theme_settings.home_product_block_with_banner-3-title 
+                cateSubHeading=theme_settings.home_product_block_with_banner-3-subheading 
+                cateHeading=theme_settings.home_product_block_with_banner-3-heading 
+                cateText1=theme_settings.home_product_block_with_banner-3-text1 
+                cateText2=theme_settings.home_product_block_with_banner-3-text2 
+                cateBtn=theme_settings.home_product_block_with_banner-3-btntext 
+                cateLink=theme_settings.home_product_block_with_banner-3-link
+            }}
+
+            <div style="height: 80px;"></div>
+            {{> components/halothemes/home/halo-banner banner="home-bottom-banners"}}
+
+            <!-- Added -->
+            {{> components/halothemes/home/home-icon-with-text}}
+            {{> components/halothemes/home/review-recent}}
+            <!-- /Added -->
+
+            <div class="faq-container">
+                <div class="title" pc>Preguntas frecuentes</div>
+                <div class="title" mobile>FAQ</div>
+                <div class="content">
+                    <div class="info__box">
+                        <div class="left_box">
+                          <p class="shinny info__text info__text_one"></p>
+                          <p class="shinny info__text info__text_two"></p>
+                          <p class="shinny info__text info__text_three"></p>
+                        </div>
+                        <div class="right_box">
+                          <div class="shinny image"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="focus-wrap">
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="/content/images/homepage/focus-pc.webp" type="image/webp">
+                    <source media="(min-width: 1024px)" srcset="/content/images/homepage/focus-pc.jpg" type="image/jpeg">
+                    <source media="(min-width: 600px)" srcset="/content/images/homepage/focus-tablet.webp" type="image/webp">
+                    <source media="(min-width: 600px)" srcset="/content/images/homepage/focus-tablet.jpg" type="image/jpeg">
+                    <source srcset="/content/images/homepage/focus-mobile.webp" type="image/webp">
+                    <source srcset="/content/images/homepage/focus-mobile.jpg" type="image/jpeg">
+                    <img src="/content/images/homepage/focus-mobile.jpg" class="background">
+                </picture>
+                <div class="content-wrap">
+                    <div class="title">Concéntrese en el cliente y lo demás se añadirá</div>
+                    <div class="content">
+                        <p>Iniciamos con la misión de ofrecer prótesis capilares de calidad exceptional a un precio asequible. Nuestra fábrica se estableció firmemente en agosto de 1996 en Qingdao, China. Hoy, 2022, Superhairpieces alberga a más de 500 trabajadores permanentes que comparten la misma visión, de ofrecer la mejor calidad en prótesis capilares, pelucas, adornos y extensiones de cabello.</p>
+                        <p>Ofrecemos la más avanzada tecnología, como líneas capilares indetectables y anudados duraderos, con una opción rápida y fácil de compra en nuestra tienda virtual.</p>
+                        <p>Creemos que un cabello hermoso puede cambiar la vida de alguien. Y bajo esta premisa, cada una de nuestras prótesis engloba artesanía, destreza manual, calidad y creatividad. Y creemos firmemente que es extremadamente importante compartir esta belleza con el mundo con moral y dignidad.</p>
+                    </div>
+                    <div class="author-wrap">
+                        <img src="/content/images/homepage/boss.jpg" alt="George Li">
+                        <div>
+                            <div class="name">George Li</div>
+                            <div>Propietario Superhairpieces</div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+            {{> components/halothemes/home/halo-banner banner="home2-bottom-banners"}}
+
+            {{> components/halothemes/home/home-recent-posts post=blog.recent_posts}}
+
+            {{> components/halothemes/home/halo-banner banner="home-instagram"}}
+        {{else}}        
+            {{> components/halothemes/home/halo-banner banner="home-top-banners"}}
+
+            {{> components/halothemes/home/halo-banner banner="home2-top-banners"}}
+
+            {{> components/halothemes/home/halo-banner banner="home-top-brands"}}
+
+            {{> components/halothemes/halo-product-by-category-with-flash-deals 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_flash_deals_id 
+                cateImg=theme_settings.home_product_block_with_flash_deals_img 
+                cateImg2=theme_settings.home_product_block_with_flash_deals_img2 
+                cateTitle=theme_settings.home_product_block_with_flash_deals_title 
+                cateLink=theme_settings.home_product_block_with_flash_deals_link 
+                cateLink2=theme_settings.home_product_block_with_flash_deals_link2 
+                coutDown=theme_settings.home_product_block_with_flash_deals_count_down
+            }}
+
+            {{> components/halothemes/halo-product-by-category-with-banner-2 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_banner_1_id 
+                cateImg=theme_settings.home_product_block_with_banner-1-img 
+                cateTitle=theme_settings.home_product_block_with_banner-1-title 
+                cateSubHeading=theme_settings.home_product_block_with_banner-1-subheading 
+                cateHeading=theme_settings.home_product_block_with_banner-1-heading 
+                cateText1=theme_settings.home_product_block_with_banner-1-text1 
+                cateText2=theme_settings.home_product_block_with_banner-1-text2 
+                cateBtn=theme_settings.home_product_block_with_banner-1-btntext 
+                cateLink=theme_settings.home_product_block_with_banner-1-link
+            }}
+
+            {{> components/halothemes/halo-product-by-category-with-banner-2 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_banner_2_id 
+                cateImg=theme_settings.home_product_block_with_banner-2-img 
+                cateTitle=theme_settings.home_product_block_with_banner-2-title 
+                cateSubHeading=theme_settings.home_product_block_with_banner-2-subheading 
+                cateHeading=theme_settings.home_product_block_with_banner-2-heading 
+                cateText1=theme_settings.home_product_block_with_banner-2-text1 
+                cateText2=theme_settings.home_product_block_with_banner-2-text2 
+                cateBtn=theme_settings.home_product_block_with_banner-2-btntext 
+                cateLink=theme_settings.home_product_block_with_banner-2-link
+            }}
+
+            {{> components/halothemes/halo-product-by-category-with-banner-2 
+                productsnew=products.new 
+                cateId=theme_settings.home_product_block_with_banner_3_id 
+                cateImg=theme_settings.home_product_block_with_banner-3-img 
+                cateTitle=theme_settings.home_product_block_with_banner-3-title 
+                cateSubHeading=theme_settings.home_product_block_with_banner-3-subheading 
+                cateHeading=theme_settings.home_product_block_with_banner-3-heading 
+                cateText1=theme_settings.home_product_block_with_banner-3-text1 
+                cateText2=theme_settings.home_product_block_with_banner-3-text2 
+                cateBtn=theme_settings.home_product_block_with_banner-3-btntext 
+                cateLink=theme_settings.home_product_block_with_banner-3-link
+            }}            
+
+            {{> components/halothemes/home/halo-banner banner="home-middle-banners"}}
+
+            {{> components/halothemes/home/home-icon-with-text2}}
+
+            {{> components/halothemes/home/halo-banner banner="home-parallax-banners"}}
+
+            {{#if theme_settings.home_product_block '==' 'Featured'}}
+                {{> components/halothemes/home2-product-grid products=products.featured productsnew=products.new title=theme_settings.home_product_block-title block_id="halo-product-block-1" productType="featured" listName="Featured Products" columns=theme_settings.homepage_featured_products_column_count}}
+            {{else if theme_settings.home_product_block '==' 'New'}}
+                {{> components/halothemes/home2-product-grid products=products.new productsnew=products.new title=theme_settings.home_product_block-title block_id="halo-product-block-1" productType="newest" listName="New Products" columns=theme_settings.homepage_new_products_column_count}}
+            {{else if theme_settings.home_product_block '==' 'Top'}}
+                {{> components/halothemes/home2-product-grid products=products.top_sellers productsnew=products.new title=theme_settings.home_product_block-title block_id="halo-product-block-1" productType="top_sellers" listName="Most Popular Products" columns=theme_settings.homepage_top_products_column_count}}
+            {{else if theme_settings.home_product_block '==' 'Special'}}
+                {{> components/halothemes/halo-product-by-category cateid=theme_settings.home_product_block_id productsnew=products.new}}
+            {{/if}}
+
+            {{> components/halothemes/home/halo-banner banner="home-bottom-banners"}}
+
+            {{> components/halothemes/home/halo-banner banner="home-faqs-block"}}
+
+            {{> components/halothemes/home/halo-banner banner="home2-bottom-banners"}}
+
+            {{> components/halothemes/home/home-recent-posts post=blog.recent_posts}}
+
+            {{> components/halothemes/home/halo-banner banner="home-instagram"}}
+
+            {{> components/halothemes/home/home-icon-with-text}}
+        {{/if}}
+    </div>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            fetch(`/content/data/homepage-faq.eu.json`)
+            .then(r=>r.json())
+            .then(r=>{
+
+                if (r.length>0){
+                    let ct="";
+                    for (let faq of r) {
+                        let ans="";
+                        for (let a of faq.answer) {
+                            ans+=`<p>${a}</p>`;
+                        }
+                        ct+=`<div class="item close">
+                            <h3 class="question">
+                                ${faq.question}
+                                <span class="icon">&nbsp;</span>
+                            </h3>
+                            <div class="answer">
+                                ${ans}
+                            </div>
+                        </div>`;
+                    }
+                    ct+=`<div class="see-more"><a><span>Ver todos los temas</span></a></div>`;
+                    $(".faq-container .content").html(ct);
+                    $(".faq-container .question").on("click", function() {
+                        let $parent = $(this).parents(".item");
+                        if ($parent.hasClass("close")) {
+                            $parent.find(".answer").slideDown();
+                            $parent.removeClass("close").addClass("open");
+                        } else {
+                            $parent.find(".answer").slideUp();
+                            $parent.removeClass("open").addClass("close");
+                        }
+                    });
+                }
+            })
+            .catch(e=>console.log(e));
+        });
+    </script>
+{{/partial}}
+{{> layout/base}}

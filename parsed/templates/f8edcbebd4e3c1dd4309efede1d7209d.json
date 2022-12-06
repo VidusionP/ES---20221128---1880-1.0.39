@@ -1,0 +1,1 @@
+{"components/halothemes/home/halo-layout-banner":"{{!--\nArguments:\n    - find (string)\n--}}\n{{#if banners.top}}\n    {{#each banners.top}}\n        {{#if (occurrences this ../find) '>' 0}}\n            {{{this}}}\n        {{/if}}\n    {{/each}}\n{{/if}}\n"}

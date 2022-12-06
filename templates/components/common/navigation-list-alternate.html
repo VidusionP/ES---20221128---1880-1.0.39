@@ -1,0 +1,22 @@
+{{#if children}}
+    <p class="navPages-action has-subMenu is-root" data-label="{{url}}">
+        
+            {{#if name '==' 'Hombres'}}
+                <span class="text" style="cursor: default;">{{name}}</span>
+            {{else if name '==' 'Mujeres'}}
+                <span class="text" style="cursor: default;">{{name}}</span>
+                {{else if name '==' 'Información'}}
+                <span class="text" style="cursor: default;">{{name}}</span>
+            {{else}}
+                <a class="text" href="{{url}}">{{name}}</a>
+            {{/if}}
+            <span class="navPages-action-moreIcon" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down" /></svg>
+            </span>
+    </p>
+    {{> components/common/navigation-dropdown}}
+{{else}}
+    <a class="navPages-action navPages-action-end" data-label="{{url}}" href="{{url}}">
+      <span class="text">{{name}}</span>
+    </a>
+{{/if}}

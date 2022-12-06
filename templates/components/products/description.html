@@ -1,0 +1,20 @@
+<div id="accordion" class="productView-tabs"{{#if schema}} itemprop="description"{{/if}} section="description">	
+	<div section="hidden">{{{product.description}}}</div>
+	{{!--
+	{{#if product.warranty}}
+	    <div class="card warranty">
+	        <div class="card-header" id="desc-w-title">
+	            <button class="title" data-toggle="collapse" data-target="#faqs-w-content" aria-expanded="true" aria-controls="faqs-w-content" onclick="productTabToggle(this)">
+	                {{lang 'products.warranty'}}
+	            </button>
+	            <span class="icon-plus">&nbsp;</span>
+	        </div>
+	        <div id="faqs-w-content" class="collapse" aria-labelledby="desc-w-title" data-parent="#accordion">
+	            <div class="card-body has-warranty">
+	                {{{product.warranty}}}
+	            </div>
+	        </div>
+	    </div>
+	{{/if}}
+	--}}
+</div>
