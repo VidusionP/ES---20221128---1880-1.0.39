@@ -78,7 +78,18 @@ font-size: 60px;
 line-height: 1;
 font-weight: 800;
 }
-
+.homeGif {
+    width: 100% !important;
+    object-fit: cover !important;
+    margin-left: unset !important;
+    transform: none !important;
+}
+.homeImage {
+    width: 100% !important;
+    object-fit: cover !important;
+    margin-left: unset !important;
+    transform: none !important;
+}
 /* .test08 {
     display: none;
 } */
@@ -898,9 +909,10 @@ max-height: 120vw;
 <div function="list-product" data-ids="3623, 2537, 2407, 2521, 3582, 2378, 3623"></div>
 
 <div class="banner">
+    <div class="homeVideo" style="width: 100%;">
 
-    <video id="videoHome" src="/content/images/marketing/reviewlanding/review2.mp4" poster="/content/images/marketing/reviewlanding/review2-img.jpg" autoplay loop muted playsinline  >
-    </video>
+    </div>
+
     <div class="marquee">
         <div>
           <span>Mi confianza de vuelta.</span>
@@ -1882,8 +1894,33 @@ const extra1 = parseInt($(".reviewWall .section").css("maxHeight")) + 2000
 })
    window.addEventListener("DOMContentLoaded", function() {
     var child_index = '';
+    let windowChange = $(window).width()
 
-    document.getElementById('videoHome').play();
+        
+    $(window).on("resize orientationchange", function() {
+        let windowChange1 = $(window).width()
+        let windowChange2 = 800
+        console.log(windowChange1)
+        console.log (windowChange2)
+        if ( windowChange1 < windowChange2) {
+            if (!($($('.homeVideo')[0]).find('img'))) {
+                $('.homeVideo').append(`
+    <img class=homeGif src="/content/images/marketing/reviewlanding/review.gif">
+`)
+            }
+    } else {
+        if (!($($('.homeVideo')[0]).find('video'))) {
+            $('.homeVideo').css("width", "unset")
+        $('.homeVideo').append(`
+        <video id="videoHome" src="/content/images/marketing/reviewlanding/review2.mp4" poster="/content/images/marketing/reviewlanding/review2-img.jpg" autoplay loop muted playsinline>
+    </video>
+
+        `)
+            }
+
+    }
+
+    })
 
 $('.child').click(function() {
     $('.tiktok-overlay').removeClass('tiktok-overlay')
