@@ -1,0 +1,2023 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+<style>
+.body .page-content {
+   margin-bottom: -50px;
+}
+.body .page-container .container {
+   max-width: unset !important;
+   padding: unset !important;
+}
+   .breadcrumb-wrapper{
+    display: none;
+}
+.page-header {
+  display: none;
+}
+    .page-heading {
+   display: none;
+   }
+     .page-normal {
+     padding: unset;
+}
+.halo-page-content a:not(.button) {
+    background-image: unset;
+}
+.halo-page-content blockquote {
+   margin: unset;
+   border-left: unset;
+  padding: 10px 20px;
+}
+
+    .banner img {
+        object-fit: contain;
+        width: 300%;
+        max-width: unset;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .banner {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        max-width: unset;
+
+    }
+    .banner video {
+        width: 100%;
+        object-fit: cover;
+    }
+    .marquee {
+  height: 65px;
+  width: 2000px;
+
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(180deg, transparent, black);
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 100%;
+
+  position: absolute;
+  overflow: hidden;
+
+  animation: marquee 25s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  width: fit-content;
+color: white;
+font-family: "Poppins";
+font-size: 60px;
+line-height: 1;
+font-weight: 800;
+}
+
+/* .test08 {
+    display: none;
+} */
+.section_line {
+    width: 60%;
+    background-color: #5a5a5a;
+    height: 1px;
+    border-radius: 5px;
+    display: block;
+    margin: 40px auto;
+    max-width: 200px;
+}
+.section_line.line2 {
+    display: none;
+}
+.review-Section {
+    width: 80%;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.review-Section h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: initial;
+}
+.review-Section img {
+    width: 60%;
+}
+.review-Section .number {
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.review-Section .subText {
+    font-size: 20px;
+
+}
+.results-product {
+    width: 300px !important;
+    min-width: 0 !important;
+}
+.review-tiktoks-1 .tiktoksrc {
+    width: 80%;
+    max-width: 450px;
+    margin: auto;
+    min-width: unset ;
+}
+.review-tiktoks-1 .tiktoksrc .tiktokimg {
+    border-radius: 25px;
+    cursor: pointer;
+}
+.v-video-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        display: none;
+                        z-index: 99;
+
+                    }
+                    .v-video-modal.show {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 40px;
+                    }
+                    .v-video-modal-overlay {
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        background-color: rgba(0, 0, 0, 0.75);
+                    }
+                    .v-video-modal-close {
+                        position: absolute;
+                        right: 0;
+                        top: -60px;
+                        width: 50px;
+                        height: 50px;
+                        cursor: pointer;
+                        z-index: 9;
+                        background-image: url("/content/images/marketing/reviewlanding/close.svg");
+                        background-repeat: no-repeat;
+                        background-position: center right;
+                        background-size: 20px 20px;
+                    }
+                    .v-video-modal-close img {
+                        object-position: center right;
+                    }
+                    .v-video-container {
+                        max-width: 90%;
+                        z-index: 99;
+                        position: relative;
+                    }
+                    .v-video-container iframe {
+                        max-width: 100%;
+                        max-height: 80%;
+                    }
+
+
+
+
+
+.review-results {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 80px;
+}
+.review-results .section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.review-results .resultImg {
+    position: relative;
+}
+.review-results .resultImg div{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    line-height: 1;
+    color: white;
+    background: black;
+    padding: 5px 10px;
+}
+.results-section1 .section2 {
+    display: flex;
+    flex-direction: column;
+}
+.section2 p{
+    font-weight: 600;
+    font-weight: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.resultsSlick {
+    position: relative;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+@media (min-width: 768px) {
+    .section_line.line2 {
+    display: block;
+}
+    .resultsSlick {
+        border-bottom: unset;
+        flex-direction: row-reverse;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 35%;
+    }
+    
+}
+.resultsSlick .arrow {
+    width: 80px;
+    position: relative;
+}
+.resultsSlick.desktop {
+    display: none;
+}
+.resultsSlick .dot {
+    width: 100px;
+    position: relative;
+}
+.resultsSlick .dot .slick-dots {
+    bottom: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: fit-content;
+}
+.resultsSlick .arrow .slick-prev {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+}
+.resultsSlick .arrow .slick-next {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+}
+
+.review-tiktoks {
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+    bottom: -10px;
+    z-index: 1;
+}
+.reivew-tiktok-1 {
+    width: 90%;
+    margin: auto;
+}
+/* .review-tiktoks-1 {
+    display: flex;
+
+} */
+.review-tiktoks-1 .section8 {
+    display: none;
+}
+.reviewWall-section .para {
+    -webkit-box-orient: vertical ;
+    width: 100%;
+
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 10;
+}
+.reviewWall-section .card {
+    background-color: rgb(236, 236, 236);
+    height: fit-content;
+}
+.reviewWall-section .card-review {
+    padding: 10px;
+}
+.reviewWall-section .card-review .firstName {
+    font-weight: 600;
+    margin: unset;
+}
+.reviewWall-section .card-review .location {
+    margin: unset;
+    font-size: small;
+}
+.reviewWall-section .r-link {
+    overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+text-decoration: underline;
+color: #5a5a5a;
+}
+@media (min-width: 768px) {
+    .resultsSlick.desktop {
+    display: flex;
+}
+    .review-tiktoks-1 .section8 {
+    display: block;
+}
+    .review-tiktoks-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr;
+    }
+    .review-tiktoks .topsection{
+        width: 90%;
+        margin: auto;
+height: 100%
+    }
+    .tiktok-dots {
+        flex-direction: column;
+        justify-content: center !important;
+        gap: 10px;
+    }
+}
+.review-tiktoks .topsection{
+    width: 90%;
+    margin: auto;
+}
+.review-tiktoks .bottomsection {
+    position: relative;
+    margin-bottom: -85px;
+}
+.bottomsection .tiktok-products {
+
+    top: -100px;
+    width: 50%;
+    min-width: unset;
+    border-radius: 10px;
+    left: 10px;
+}
+.review-tiktoks .topsection h2{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: initial;
+margin-top: unset;
+}
+.review-tiktoks .topsection p{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    line-height: 1.2;
+   margin-bottom: 1.5rem;
+}
+.tiktok-overlay {
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 69px;
+    width: 69px;
+    left: 0;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+.tiktok-dots {
+    display: flex;
+    justify-content: space-evenly;
+
+    padding-bottom: 50px;
+}
+
+
+
+.reviewWall {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    background-image: url('/content/images/marketing/reviewlanding/reviewWall1.jpg');
+    padding-bottom: 200px;
+}
+
+.reviewWall img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    object-fit: fill;
+    width: 100%;
+}
+.reviewWall h2 {
+    position: relative;
+    color: white;
+    font-size: 50px;
+    text-align: left;
+    width: 300px;
+   line-height: initial;
+}
+.reviewWall .section {
+    width: 80%;
+    margin: auto;
+    padding-top: 75px;
+    /* height: 80%; */
+    max-height: 1500px;
+    /* max-height: 400vw; */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 5s ease-out;
+}
+.reviewWall .bkgOverlay {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 255, 0), rgb(255, 255, 255));
+    height: 300px;
+    width: 100%;
+}
+.reviewWall .loadButton {
+    position: relative;
+    /* width: 100%; */
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 150px;
+    margin: 20px auto 0;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+
+    /* left: 50%;
+    transform: translate(-50%); */
+}
+.reviewWall-section{
+ position: relative;
+ background-color: white;
+ /* display: grid;
+ grid-template-columns: 1fr 1fr; */
+ padding: 10px;
+ /* gap: 10px; */
+ column-gap: 10px;
+ height: 100%;
+ /* min-height: 500px ; */
+ columns: 5 120px;
+ min-height: 1400px;
+}
+.reviewWall-section .card {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.reviewWall-section img {
+    position: relative;
+    height: auto;
+}
+
+
+
+.reviewWall.second {
+    top: -50px;
+    height: 600px;
+}
+.second .review-bottom {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    color: white;
+}
+.review-bottom p {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+   margin-bottom: 1.5rem;
+}
+.review-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.review-buttons div {
+    width: 125px;
+    text-align: center;
+    margin: auto;
+    font-weight: 600;
+    /* font-size: 20px; */
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+.review-instaTop {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+}
+.review-instaTop p {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+.review-soc1 {
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    top: -30px;
+    z-index: 1;
+}
+.review-soc1-section {
+    /* width: 90%; */
+    /* margin: auto; */
+    padding: 20px 0;
+}
+.review-instaTop {
+    width: 80%;
+    margin: auto;
+}
+.review-insta {
+    width: 90% !important;
+    min-width: unset !important;
+    margin: auto;
+}
+
+
+.checking123 {
+    width: 80px;
+}
+.checking123 .slick-prev {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+}
+.checking123 .slick-next {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+}
+.checking123 .slick-prev::before {
+    color: black;
+
+}
+
+.r-item {
+    display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        background-color: white;
+        border-radius: 25px;
+        /* padding: 20px; */
+        /* margin: 0 10px; */
+}
+.r-item1 {
+    display: block !important;
+    padding: 10px !important;
+}
+.r-item img{
+    width: 115px;
+}
+.r-item .r-name {
+    font-size: 16px;
+            font-weight: 700;
+            line-height: 26px;
+            text-transform: capitalize;
+            color: #274b4f;
+            -webkit-box-orient: vertical ;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+}
+.r-item .r-price {
+    font-size: 18px;
+            font-weight: 500;
+            color: #5a5a5a;
+            font-size: 18px;
+            font-weight: bold;
+}
+.tiktok-dots .child {
+    width: 69px;
+    height: 69px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+@media (min-width: 600px) {
+    .reviewWall-section{
+
+    columns: 3 150px;
+}
+}
+@media (min-width: 768px) {
+    .review-tiktoks .topsection p {
+        width: 250px;
+        margin-left: auto;
+        padding-left: unset;
+    }
+    .reviewWall h2 {
+    position: relative;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    width: unset;
+    text-transform: uppercase;
+}
+    .reviewWall .review-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .reviewWall .review-buttons div {
+        margin: unset;
+    }
+    .bottomsection .tiktok-products {
+        display: none;
+    }
+    .r-item1 {
+    border: 5px solid rgb(202, 202, 202);
+    }
+    .review-tiktoks-1 {
+        width: 98%;
+        margin: auto;
+padding: 30px 0;
+    }
+    .section8 {
+        width: 250px !important;
+        min-width: unset !important;
+        float: right;
+    }
+    .reviewWall.second {
+        height: 400px;
+    }
+    .reviewWall-section{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}        
+@media (min-width:768px) {
+    .review-tiktoks .bottomsection {
+    margin-bottom: 0;
+}
+    .review-Section  {
+    display: flex;
+    gap: 30px;
+}
+    .results-slick .results-section1 {
+    
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    gap: 20px;
+}
+.results-product {
+    width: 400px !important;
+
+}
+.r-item {
+    grid-template-columns: .5fr 1fr;
+}
+.r-item img {
+    width: 100%;
+}
+}
+@media (min-width: 800px) {
+    .reviewWall {
+
+    height: 320vw;
+
+}
+
+.reviewWall .section {
+
+    max-height: 300vw;
+
+}
+}
+@media (min-width: 1024px) {
+    .banner {
+        /* background-image: linear-gradient(180deg, black, transparent); */
+        /* background-image: linear-gradient(180deg, transparent, black); */
+        background: black;
+    }
+    .banner video {
+        max-width: 1300px;
+    }
+    .marquee {
+        width: 1300px;
+    }
+    .marquee div {
+        width: 300%;
+        animation: marquee 10s linear infinite;
+    }
+
+    .reviewWall {
+
+
+background-image: url('/content/images/marketing/reviewlanding/reviewWall.jpg');
+
+}
+    .v-video-modal-close { 
+        top: 15px;
+        right: -30px;
+    }
+    .reviewWall-section{
+
+columns: 4 150px;
+}
+.reviewWall {
+
+height: 140vw;
+
+}
+
+.reviewWall .section {
+max-height: 120vw;
+
+}
+    .review-insta {
+        width: 80% !important;
+    }
+    .review-insta .slick-slide {
+        padding-right:40px;
+    }
+    .reviewWall-section .r-link {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        align-items: center;
+    }
+    .reviewWall-section .r-link  div{
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    text-decoration: underline;
+    color: #5a5a5a
+    }
+    .reviewWall-section{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .review-Section {
+        margin-bottom: 20px;
+        max-width: 1400px;
+    }
+    .review-Section1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        max-width: 750px;
+    }
+    .review-results {
+        max-width: 1200px;
+        margin-bottom: 20px;
+    }
+    .review-results .section {
+        flex-direction: row;
+    }
+    .resultsSlick {
+        width: 200px;
+        height: 55px;
+    }
+    .review-tiktoks-1 {
+        width: 80%;
+        margin: auto;
+        max-width: 1400px;
+    }
+    .review-tiktoks {
+        padding-bottom: 50px;
+padding-top: 30px;
+    }
+    .review-tiktoks .topsection {
+        width: 80%;
+    }
+    .review-tiktoks .topsection h2 {
+        font-size: 60px;
+line-height: 1;
+margin-bottom: 30px;
+    }
+}
+@media (min-width: 1440px) {
+    .reviewWall .review-buttons div {
+    font-size: 18px;
+}
+    .reviewWall-section{
+
+columns: 5 150px;
+}
+.reviewWall {
+
+height: 100%;
+}
+
+.reviewWall .section {
+max-height: 120vw;
+}
+    .reviewWall-section{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .review-Section h2 {
+        font-size: 64px;
+        
+    }
+    .review-tiktoks-1 {
+    grid-template-columns: 2fr 1fr .5fr;
+
+    }
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+                    .info__box {
+                        background: #fff;
+                        padding: 10px 5px;
+                        margin: 0 5px;
+                        
+
+                    }
+                    .info__text {
+                        height: 500px;
+                        border-radius: 25px;
+                        
+                    }
+
+                    .info__text_one {
+                        width: 100%;
+                    }
+                    .info__text_two {
+                        width: 70%;
+                    }
+                    .info__text_three {
+                        width: 85%;
+                    }
+                    .left_box {
+                        flex: 0 0 70%;
+                        margin-right: auto;
+                    }
+                    .image {
+                        height: 90px;
+                        /* width: 90px; */
+                        border-radius: 25px;
+                    }
+                    .shinny {
+                        background: #d3d3d3;
+                        margin: 10px auto;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .shinny::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background: rgba(255, 255, 255, 0.2);
+                        height: 100%;
+                        transform: skew(5deg);
+                        animation: 1.5s ease-in-out infinite shine;
+                    }
+                    @keyframes shine {
+                        from {
+                            transform: skew(45deg) translateX(0);
+                        }
+                        to {
+                            transform: skew(45deg) translateX(200%);
+                        }
+
+                    }
+</style>
+<div function="list-product" data-ids="3623, 2537, 2407, 2521, 3582, 2378, 3623"></div>
+
+<div class="banner">
+
+    <video id="videoHome" src="/content/images/marketing/reviewlanding/review2.mp4" poster="/content/images/marketing/reviewlanding/review2-img.jpg" autoplay loop muted playsinline  >
+    </video>
+    <div class="marquee">
+        <div>
+          <span>Mi confianza de vuelta.</span>
+          <span>   Mi confianza de vuelta.</span>
+          <span>   Mi confianza de vuelta.</span>
+          <span>   Mi confianza de vuelta.</span>
+        </div>
+      </div>
+</div>
+<div class="review-Section">
+    <div>
+        <h2>Satisfacción Garantizada</h2>
+    </div>
+    <div class="review-Section1">
+        <div>
+            <img src="/content/images/marketing/reviewlanding/stars.png">
+            <p class="number">Basado en 2332 reseñas</p>
+        </div>
+        <div>
+            <p class="subText">Todas nuestras reseñas provienen de usuarios verificados, lo que significa que ellos tuvieron que recibir su orden.</p>
+        </div>
+    </div>
+    
+</div>
+<span class="section_line line2"></span>
+<div class="review-results">
+    <h2>Resultados reales</h2>
+    <div style="position: relative;">
+        <div class="results-slick">
+            <div class="results-section1">
+                <input type = "hidden" class = "thingIWant" value = "3623" />
+    
+                <div class="section">
+                    <div class="resultImg">
+                        <img src="/content/images/marketing/reviewlanding/James1.jpeg">
+                        <div>Antes</div>
+                    </div>
+                    <div class="resultImg">
+                        <img src="/content/images/marketing/reviewlanding/James2.jpeg">
+                        <div>Después</div>
+                    </div>
+                </div>
+                <div class="section2">
+                    <p>Me siento mucho más joven, he recuperado la confianza en mí mismo.</p>
+                    <p>- James</p>
+                </div>
+            </div>
+            <div class="results-section1">
+                <input type = "hidden" class = "thingIWant" value = "2537" />
+    
+                <div class="section">
+                    <div class="resultImg">
+                        <img style="height: 100%;" src="/content/images/marketing/reviewlanding/William1.png">
+                        <div>Antes</div>
+                    </div>
+                    <div class="resultImg">
+                        <img style="height: 100%;" src="/content/images/marketing/reviewlanding/William2.png">
+                        <div>Después</div>
+                    </div>
+                </div>
+                <div class="section2">
+                    <p>Uso prótesis capilares desde 1999, el servicio al cliente es asombroso responden inmediatamente, estoy muy feliz con Superhairpieces y la calidad que ofrece.</p>
+                    <p>- William</p>
+    
+                </div>
+            </div>
+            <div class="results-section1">
+                <input type = "hidden" class = "thingIWant" value = "2407" />
+    
+                <div class="section">
+                    <div class="resultImg">
+                        <img src="/content/images/marketing/reviewlanding/Jitesh1.jpeg">
+                        <div>Antes</div>
+                    </div>
+                    <div class="resultImg">
+                        <img src="/content/images/marketing/reviewlanding/Jitesh2.jpeg">
+                        <div>Después</div>
+                    </div>
+                </div>
+                <div class="section2">
+                    <p>Ver la transformación en mis amigos me hizo querer probar las prótesis capilares. Ahora usarlas ha cambiado definitivamente mi vida.</p>
+                    <p>- Jitesh</p>
+    
+                </div>
+            </div>
+        </div>
+        <div class="resultsSlick desktop">
+            <div id="resultsArrow1" class="arrow"></div>
+            <div id="resultsDots1" class="dot"></div>
+        </div>
+    </div>
+    
+    
+    <div id="testing1" class="results-product"></div>
+    <div class="resultsSlick">
+        <div id="resultsArrow" class="arrow"></div>
+        <div id="resultsDots" class="dot"></div>
+    </div>
+    
+</div>
+<span class="section_line line2"></span>
+<div class="review-tiktoks">
+    <div class="review-tiktoks-1">
+        <div class="topsection">
+            <h2>Nuestros clientes hablan por nosotros</h2>
+            <p>Personas reales, soluciones reales, resultados reales.</p>
+            <div id="section8" class="section8"></div>
+        </div>
+        <div class="bottomsection">
+            <div class="tiktoksrc">
+                <div id="1" class="tiktoksrc1">
+                <input type = "hidden" class = "thingIWant1" value = "2521" />
+                        <img style="position: absolute; width:50px; top: 10px; right: 10px;" src="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+                    <img class="tiktokimg" src="/content/images/marketing/reviewlanding/tiktok-ES1.jpg">
+                    <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" src="/content/images/marketing/reviewlanding/play.svg">
+
+                </div>
+                <div id="2" class="tiktoksrc1">
+                <input type = "hidden" class = "thingIWant1" value = "3582" />
+                        <img style="position: absolute; width:50px; top: 10px; right: 10px;" src="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+
+                    <img class="tiktokimg" src="/content/images/marketing/reviewlanding/tiktok-ES2.jpeg">
+                    <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" src="/content/images/marketing/reviewlanding/play.svg">
+
+                </div>
+                <div id="3" class="tiktoksrc1">
+                <input type = "hidden" class = "thingIWant1" value = "2378" />
+                    <img style="position: absolute; width:50px; top: 10px; right: 10px;" src="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+                    <img class="tiktokimg" src="/content/images/marketing/reviewlanding/tiktok-ES3.jpeg">
+                    <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" src="/content/images/marketing/reviewlanding/play.svg">
+
+                </div>
+                <div id="4" class="tiktoksrc1">
+                <input type = "hidden" class = "thingIWant1" value = "3623" />
+                    <img style="position: absolute; width:50px; top: 10px; right: 10px;" src="/content/images/marketing/reviewlanding/tiktok-logo.svg">
+
+                    <img class="tiktokimg" src="/content/images/marketing/reviewlanding/tiktok-ES4.jpeg">
+                    <img style="position: absolute; width:80px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" src="/content/images/marketing/reviewlanding/play.svg">
+
+                </div>
+            </div>
+            <div class="tiktok-products" id="tiktok-products">
+        </div>
+        
+
+        </div>
+        <div class="tiktok-dots">
+            <div class="child" style="cursor: pointer;">
+                <div class="tiktok-card" style="position: relative;"id="pic0">
+                    <img style=" height: 69px; width: 69px;" src="https://cdn11.bigcommerce.com/s-qet21urb3p/images/stencil/960w/products/2521/8317/M158__37851.1661454053.jpg?c=1">
+                    <span  class="tiktok-overlay" style="position: absolute;"></span>
+                </div>
+            </div>
+            <div class="child" style="cursor: pointer;" >
+                <div class="tiktok-card" style="position: relative;" id="pic1" >
+                    <img style=" height: 69px; width: 69px;" src="https://cdn11.bigcommerce.com/s-qet21urb3p/images/stencil/572x572/products/3582/8703/side__14585.1662475971.jpg?c=1">
+                    <span style="position: absolute;"></span>
+                </div>
+            </div>
+            <div class="child" style="cursor: pointer;" >
+                <div class="tiktok-card" style="position: relative;" id="pic2" >
+                    <img style=" height: 69px; width: 69px;" src="https://cdn11.bigcommerce.com/s-qet21urb3p/images/stencil/572x572/products/2378/8136/M101ES_1__50605.1661449874.jpg?c=1">
+                    <span style="position: absolute;"></span>
+                </div>
+            </div>
+            <div class="child" style="cursor: pointer;" >
+                <div class="tiktok-card" style="position: relative;" id="pic3" >
+                    <img style=" height: 69px; width: 69px;" src="https://cdn11.bigcommerce.com/s-qet21urb3p/images/stencil/572x572/products/3623/9094/M178__61082.1668833831.jpg?c=1">
+                    <span style="position: absolute;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="reviewWall reviewWall2">
+
+    <div class="section"  id="vidugok123">
+        <h2>Nuestros clientes nos prefieren</h2>
+        <div class="reviewWall-section">
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+            <div class="info__box">
+                <div class="right_box">
+                    <div class="shinny image"></div>
+                </div>
+                <div class="left_box">
+                    <p class="shinny info__text info__text_one"></p>
+
+                </div>
+
+            </div>
+        </div>
+    <div class="bkgOverlay"></div>
+
+    </div>
+    <p class="loadButton">Ver más</p>
+
+</div>
+
+
+<div class="review-soc1">
+    <div class="review-soc1-section">
+        <div class="review-instaTop">
+            <p>Síguenos en Instagram</p>
+            <div class="checking123" style="position: relative;" id="insta-arrows"></div>
+        </div>
+        <div class="review-insta">
+            <div>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/ChH5YkkOw5B/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/ChH5YkkOw5B/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/ChH5YkkOw5B/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Superhairpieces España (@superhairpieces_espana)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+<div>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CjBRfdTowUu/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CjBRfdTowUu/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CjBRfdTowUu/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Superhairpieces España (@superhairpieces_espana)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>            
+            </div>
+            <div>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CivYD6egYNw/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CivYD6egYNw/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CivYD6egYNw/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Superhairpieces España (@superhairpieces_espana)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>            
+            </div>
+            <div>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Ch40kRGASCf/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Ch40kRGASCf/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Ch40kRGASCf/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Superhairpieces España (@superhairpieces_espana)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>            
+            </div>
+            <div>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/ChXyjZ6JY-Z/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/ChXyjZ6JY-Z/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/ChXyjZ6JY-Z/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Superhairpieces España (@superhairpieces_espana)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+            <div>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cgz2zKFsk-U/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Cgz2zKFsk-U/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Cgz2zKFsk-U/?utm_source=ig_embed&utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Superhairpieces España (@superhairpieces_espana)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>            
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reviewWall second">
+    <img src="/content/images/marketing/reviewlanding/reviewWall.jpg">
+    <div class="review-bottom">
+        <p>Descubra cómo podemos ayudarle a mejorar su confianza</p>
+        <div class="review-buttons">
+            <a style="color: white;" target="_blank" href="https://superhairpieces.es/hombre/protesis-capilares-hombre/">
+            <div class="men">Hombres</div>
+        </a>
+        <a style="color: white;" target="_blank" href="https://superhairpieces.es/mujeres/protesis-capilares-mujer/">
+
+            <div class="women">Mujeres</div>
+        </a>
+        </div>
+    </div>
+</div>
+<div class="v-video-modal">     
+<div class="v-video-modal-overlay"></div>
+<div class="v-video-container">
+    <div class="v-video-modal-close"></div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+let productSkus=[],index1=10, reviews=[], imageRoll=[], videoRoll=[], index2 = -1, index3= -1, reviewsMain=[]
+    function reviewShow() {
+        let review2 = []
+        Promise.all([
+        fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json").then(r => r.json()).then(r=>{
+        
+                            review2.push(...r)}),
+        fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=500").then(r => r.json()).then(r=>{
+        
+                            review2.push(...r)}),
+        fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=1000").then(r => r.json()).then(r=>{
+        
+                            review2.push(...r)}),
+        fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=1500").then(r => r.json()).then(r=>{
+        
+                            review2.push(...r)}),
+        ])
+        .then(
+            setTimeout(() => {
+                review2.sort(function(a,b){
+  return new Date(b['Review rate']) - new Date(a['Review rate'])
+})
+const test = review2.filter((value, index, self) =>
+  index === self.findIndex((t) => (
+    t['Product SKU'] === value['Product SKU'] 
+  ))
+)
+
+        const vidu = review2.filter(item => (item['Review images'] || item['Review videos']) && item['Review rate'] > 3)
+        const sortedArr9 = vidu.reduce((acc, element) => {
+    if (element['location'] === 'Netherlands') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr8 = sortedArr9.reduce((acc, element) => {
+    if (element['location'] === 'Norway') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr7 = sortedArr8.reduce((acc, element) => {
+    if (element['location'] === 'Denmark') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr6 = sortedArr7.reduce((acc, element) => {
+    if (element['location'] === 'Belgium') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+    const sortedArr5 = sortedArr6.reduce((acc, element) => {
+    if (element['location'] === 'United Kingdom') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr4 = sortedArr5.reduce((acc, element) => {
+    if (element['location'] === 'Italy') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr3 = sortedArr4.reduce((acc, element) => {
+    if (element['location'] === 'Ireland') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr2 = sortedArr3.reduce((acc, element) => {
+    if (element['location'] === 'Germany') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr1 = sortedArr2.reduce((acc, element) => {
+    if (element['location'] === 'Spain') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+const sortedArr = sortedArr1.reduce((acc, element) => {
+    if (element['location'] === 'France') {
+    return [element, ...acc];
+  } 
+  return [...acc, element];
+
+}, []);
+
+        sortedArr.forEach((item, i) => {
+            productSkus.push(item['Product SKU'])
+            reviews.push(item)
+        })
+
+        sortedArr.forEach((item, i) => {
+
+            productSkus.push(item['Product SKU'])
+            let imageRoll = []
+            let videoRoll = []
+            item['Review images'] === null ? '' : imageRoll.push(...item['Review images'].split(','))
+            item['Review videos'] === null ? '' : videoRoll.push(...item['Review videos'].split(','))
+            let content = `
+            <div class='card'>` + (imageRoll.length == 0 ? `<video class="stamped-ugc-modal-video" src="//s3.us-west-2.amazonaws.com/stamped.io/uploads/videos/${videoRoll[0]}.mp4" width="100%" controls="" autoplay="" muted></video>` : `<img src=https://s3-us-west-2.amazonaws.com/stamped.io/uploads/photos/thumb/${imageRoll[0]}>`) + `
+                <div class="card-review">
+                    <p class='firstName'>` + (item['Author name'] ? item['Author name'].split(' ').length > 1 ? item['Author name'].split(' ')[0] +  ' ' + item['Author name'].split(' ')[1][0] + '.' : item['Author name'] : 'Anonymous') + `</p>
+                <p class='location'>${item['location']}</p>
+                <div class="r-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>    
+                </div>
+                <p class='para'  style="-webkit-box-orient: vertical">${item['Review body']}</p>
+                    <div class=${i}>
+            <img id=${i} style="width: fixed; border: none; height: 80px;"class="card-image lazyload review-loading"  src="https://cdn11.bigcommerce.com/s-cavofu/stencil/3ff77e80-ee5d-013a-77ac-06e729959beb/e/9ab65fc0-ee7b-013a-edb8-0e025ca2ca2f/img/loading.svg">
+                        
+                        </div>
+                </div>
+                
+            </div>
+            `
+            reviewsMain.push(content)
+
+            
+            
+
+        })
+         $(`.info__box`).remove()
+        for (let i = 0; i < 10 ; i++) {
+
+            reviewShow1(productSkus[i], i)
+                $(".reviewWall-section").append(reviewsMain[i])
+            }
+            }, 2000)
+            
+        )
+
+    }
+
+
+    function reviewCarousel() {
+        let productIds = $("[function=list-product]").data("ids").toString().split(",").map(function
+        
+            (item) {
+            return parseInt(item, 10);
+        });
+        let stoken = $("[name=store-token]").val();
+        let shash = $("[name=store-hash]").val();
+
+        fetch('/graphql', {
+
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${stoken}`
+            },
+            body: JSON.stringify({ 
+                query: `
+                query productsById {
+                    site {
+                        products  (entityIds: [${productIds}]) {    
+                            edges {
+                                node {
+                                    sku                    
+                                    name
+                                    addToCartUrl
+                                    path
+                                    id
+                                    entityId
+                                    inventory {
+                                        isInStock
+                                    }
+                                    prices {
+                                        price {
+                                            value
+                                            currencyCode
+                                        }
+                                        salePrice {
+                                            ...MoneyFields
+                                        }
+                                    }
+                                    brand {
+                                        
+                                        name
+                                      }
+                                    defaultImage {
+                                        url (width: 200)
+                                    }                                    
+                                    productOptions {
+                                        
+                                        ...OptionFields
+                                    }         
+                                }
+                            }
+                            
+                                       
+                        }
+                    }
+                }
+                fragment MoneyFields on Money {
+                    value
+                    currencyCode
+                }
+                fragment OptionFields on ProductOptionConnection {
+                    edges {
+                        node {
+                            entityId
+                            displayName
+                                                                                
+                            ... on MultipleChoiceOption {
+                                values {
+                                    edges {
+                                        node {
+                                            entityId
+                                            label                                                                    
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }`                
+            })
+        })
+        .then(r=>r.json())
+        .then(r=> {
+            if (r.data) {
+
+                let content="";
+                let content1="";
+                let content2 = "";
+                const skus=[]
+                const filterArr = r.data.site.products.edges
+                $('.thingIWant').each((i,item1) => {
+                    
+                    filterArr.forEach((item) => {
+                        if(item.node.entityId == parseInt(item1.value)) {
+                            skus.push(item.node.sku)
+                    content += `
+                            <a target='_blank' class=r-item href=${item.node.path}>
+                                <div>
+                                    <img src=${item.node.defaultImage.url}>
+                                </div>
+                                <div>
+                                    <div>
+                                        <div class='vidujen ${item.node.sku}'></div>
+                                        <div class=r-name style="-webkit-box-orient: vertical">${item.node.name}</div>
+                                        <div class=r-price>${item.node.prices.price.value},00€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        
+                        `
+                        }
+                    })
+                    
+                })
+                $('.thingIWant1').each((i,item1) => {
+                    filterArr.forEach((item) => {
+                        if(item.node.entityId == parseInt(item1.value)) {
+                            skus.push(item.node.sku)
+                            content2 += `
+                            <a target='_blank' class='r-item r-item1'  href=${item.node.path}>
+                                <div>
+                                    <img src=${item.node.defaultImage.url}>
+                                </div>
+                                <div>
+                                    <div>
+                                        <div class='vidujen1 ${item.node.sku}'></div>
+                                        <div class=r-name style="-webkit-box-orient: vertical">${item.node.name}</div>
+                                        <div class=r-price>${item.node.prices.price.value},00€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        
+                        `
+                    content1 += `
+                            <a target='_blank' class='r-item r-item1'  href=${item.node.path}>
+                                <div>
+                                    <img src=${item.node.defaultImage.url}>
+                                </div>
+                                <div>
+                                    <div>
+                                        <div class='vidujen  ${item.node.sku}'></div>
+                                        <div class=r-name style="-webkit-box-orient: vertical">${item.node.name}</div>
+                                        <div class=r-price>${item.node.prices.price.value},00€</div>
+                                    </div>
+                                </div>
+                            </a>
+                        
+                        `
+
+                        }
+                    })
+                })
+
+                $("#testing1").html(content)
+                $('#testing1').slick({
+                    "dots": false,
+                    "speed": 300,
+                    "fade": true,
+                    "arrows": false,
+                    "infinite": false,
+                    "swipe": false,
+                    "slidesToShow": 1, 
+                    "slidesToScroll": 1,
+                    "asNavFor": '.results-slick'
+                    })
+                    $("#section8").html(content2)
+                $("#tiktok-products").html(content1)
+                
+                $('#tiktok-products').slick({
+                    "dots": false,
+                    "speed": 300,
+                    "fade": true,
+                    "cssEase": "linear",
+                    "arrows": false,
+                    "infinite": false,
+                    "swipe": false,
+                    "slidesToShow": 1, 
+                    "slidesToScroll": 1
+
+                    })
+                    $('#section8').slick({
+                        "asNavFor": '.tiktoksrc',
+                    
+            "dots": false,
+            "speed": 300,
+            "infinite": false,
+            "arrows": false,
+            "fade": true,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "draggable" : false,
+            "pauseOnFocus" : false
+   })
+                skus.map((item2, i) => {
+
+                    const rev =[]
+                 const review2 =[]
+                    Promise.all([
+                            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json").then(r => r.json()).then(r=>{
+                          
+                                              review2.push(...r)}),
+                            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=500").then(r => r.json()).then(r=>{
+                          
+                                              review2.push(...r)}),
+                            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=1000").then(r => r.json()).then(r=>{
+                          
+                                              review2.push(...r)}),
+                            fetch("https://www.teamdesk.net/secure/api/v2/56554/BEA2566590EF4D14AA8D35AD0E2CEA77/Review/select.json?skip=1500").then(r => r.json()).then(r=>{
+                          
+                                              review2.push(...r)}),
+                          ])
+                    .then(r=> {
+                        let x = item2
+                        if (x == 'M106') {
+                    x = 'M106#1'
+                }else if (x == 'M106L') {
+                    x = 'M106L#1'
+                } else if (x == 'Queen_18') {
+                    x = 'Q18'
+                } 
+                const filterArr = review2.filter(item => item['Product SKU'] === x)
+                        filterArr.forEach((item) => {
+                            rev.push(item['Review rate'])
+                        })
+                        const reviewAvg = Math.round((rev.reduce((a,b ) => a+ b, 0)/rev.length) * 10)/10
+                        var content = `<style>    .checked {
+                            color: rgb(255, 210, 0);
+                            
+                    }
+                    .fa-star-o {
+                        color: rgb(255, 210, 0);
+                
+                    }
+                    .fa {
+                        font-size:20px !important;
+                    }
+                    @media (min-width: 768px) {
+                        .productReview2 {
+                            display: flex;
+                        }
+                    }
+                    @media (min-width: 1025px) {
+                        .productReview2 {
+                            display: unset;
+                        }
+                    }
+                    @media (min-width: 1400px) {
+                        .productReview2 {
+                            display: flex;
+                        }
+                    }
+                    </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        
+                        <span>
+                        <span class="fa fa-star`+(0.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                        <span class="fa fa-star`+(1.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                        <span class="fa fa-star`+(2.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                        <span class="fa fa-star`+(3.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>
+                        <span class="fa fa-star`+(4.5 <= reviewAvg? ' checked': ' fa-star-o') + `"></span>      
+                    </span>
+                    <div style="padding-left:5px;color:#5a5a5a;">
+                        ${rev.length} Reseñas
+                    </div>`
+
+                        $(`.vidujen.${item2}`).html(content)
+                        $(`.vidujen1.${item2}`).html(content)
+
+                        
+                        
+    
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+                })
+                
+            }
+        })
+
+
+        $('#resultsArrow .slick-prev').on('click', function () {
+
+            $('#testing1').slick("slickPrev")
+
+    });
+    $('#resultsArrow .slick-next').on('click', function () {
+
+        $('#testing1').slick("slickNext")
+
+
+    });
+    $('#resultsArrow1 .slick-prev').on('click', function () {
+
+            $('#testing1').slick("slickPrev")
+
+    });
+    $('#resultsArrow1 .slick-next').on('click', function () {
+
+        $('#testing1').slick("slickNext")
+
+
+    });
+    $('.arr4 .slick-prev').on('click', function () {
+
+        $('#r-test2').slick("slickPrev")
+        $('#r-test3').slick("slickPrev")
+
+});
+$('.arr4 .slick-next .slick-arrow').on('click', function () {
+
+    $('#r-test2').slick("slickNext")
+    $('#r-test3').slick("slickNext")
+
+});
+    }
+
+        
+    function reviewShow1(productSkus, i) {
+
+    let stoken = $("[name=store-token]").val();
+    let names = []
+
+        fetch('/graphql', {
+
+method: 'POST',
+headers: {
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${stoken}`
+},
+body: JSON.stringify({ 
+    query: `
+    query productBySku {
+
+
+
+
+site {
+    product(sku: "${productSkus}") {
+      id
+      entityId
+      name
+      plainTextDescription
+      defaultImage {
+        ...ImageFields
+      }
+      path
+      images {
+        edges {
+          node {
+            ...ImageFields
+          }
+        }
+      }
+      reviewSummary {
+        summationOfRatings
+        numberOfReviews
+      }
+      prices {
+        price {
+          ...MoneyFields
+        }
+        priceRange {
+          min {
+            ...MoneyFields
+          }
+          max {
+            ...MoneyFields
+          }
+        }
+        salePrice {
+          ...MoneyFields
+        }
+        retailPrice {
+          ...MoneyFields
+        }
+        saved {
+          ...MoneyFields
+        }
+        bulkPricing {
+          minimumQuantity
+          maximumQuantity
+          ... on BulkPricingFixedPriceDiscount {
+            price
+          }
+          ... on BulkPricingPercentageDiscount {
+            percentOff
+          }
+          ... on BulkPricingRelativePriceDiscount {
+            priceAdjustment
+          }
+        }
+      }
+      brand {
+        name
+      }
+    }
+  }
+}
+
+fragment ImageFields on Image {
+  url320wide: url(width: 320)
+  url640wide: url(width: 640)
+  url960wide: url(width: 960)
+  url1280wide: url(width: 1280)
+}
+ 
+fragment MoneyFields on Money {
+  value
+  currencyCode
+}
+    `                
+})
+})
+.then(r=>r.json())
+.then(r=> {
+    if (r.data.site.product == null) {
+
+    }
+    if (r.data.site.product) {
+
+
+        $(`.${i}`).append(`
+        
+        <a style="-webkit-box-orient: vertical" class='r-link' target='_blank' href=${r.data.site.product.path}>
+            
+                <img src=${r.data.site.product.images.edges[0].node.url320wide}>
+                <div style="-webkit-box-orient: vertical;">${r.data.site.product.name}</div>
+            
+            </a>
+        `)
+        
+    }
+    $(`.${i} .review-loading`)[0].remove()
+
+})
+
+
+    }
+    function loadVideoContent(list, start, end) { 
+        
+
+
+    }
+    function loadMoreVideo() {  
+
+        let maxIdx = reviewsMain.length>10+index1?10+index1:reviewsMain.length;
+        let content = loadVideoContent(reviewsMain, index1, maxIdx);
+
+        for (let i = index1; i < maxIdx; i++) {
+
+            $(".reviewWall-section").append(reviewsMain[i])
+            reviewShow1(productSkus[i], i)
+        }
+        
+        index1 = maxIdx    
+
+        if (maxIdx==reviewsMain.length) {
+            $(".loadButton").hide();
+            $(".loadButton").off("click");
+            $('.bkgOverlay').hide()
+        }
+        
+        
+
+}
+$('.loadButton').on('click', function() {
+
+let maxLength = reviewsMain.length>10+index1?10+index1:reviewsMain.length; 
+let content = loadMoreVideo(reviewsMain, index1, maxLength)   
+index1 = maxLength
+const extra1 = parseInt($(".reviewWall .section").css("maxHeight")) + 2000
+    const extra = parseInt($('.reviewWall').css("height")) + 2000
+
+    $("#vidugok123").css({"max-height": extra1})
+
+
+})
+   window.addEventListener("DOMContentLoaded", function() {
+    var child_index = '';
+
+    document.getElementById('videoHome').play();
+
+$('.child').click(function() {
+    $('.tiktok-overlay').removeClass('tiktok-overlay')
+    const child = $(this).index()
+    $(this).children().eq(0)[0].childNodes[3].classList.add('tiktok-overlay')
+    $('.tiktoksrc').slick('slickGoTo', child)
+    $('#tiktok-products').slick('slickGoTo', child)
+    $('#section8').slick('slickGoTo', child)
+
+});
+
+$('.review-insta').slick({
+    "dots": false,
+            "speed": 300,
+            "infinite": false,
+            "arrows": true,
+            "mobileFirst": true,
+            "fade": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : false,
+            "appendArrows": $('#insta-arrows'),
+            "draggable" : false,
+            "nextArrow": '<svg id=slick-next class=slick-next test1 slick-arrow aria-label=Next Slide><use xlink:href=#slick-arrow-next></use></svg>', 
+            "prevArrow": "<svg class=slick-prev slick-arrow aria-label=Previous Slide><use xlink:href=#slick-arrow-prev></use></svg>",
+            "pauseOnFocus" : false,
+            "responsive": [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        "fade": false,
+
+                        "slidesToShow": 2
+
+                    }
+                },
+                {
+                    breakpoint: 1150,
+                    settings: {
+                        "fade": false,
+
+                        "slidesToShow": 3
+
+                    }
+                }
+            ]
+   });
+   $(".tiktoksrc").on("afterChange", function(slick, currentSlide){
+    let child = currentSlide.currentSlide
+
+
+    $('.tiktok-overlay').removeClass('tiktok-overlay')
+
+    $('#pic' + child).children().eq(1)[0].classList.add('tiktok-overlay')
+
+});
+    $('.tiktoksrc').slick({
+                "dots": false,
+                "asNavFor": '.tiktok-products',
+                "infinite": false,
+                "arrows": false,
+                "mobileFirst": true,
+                "slidesToShow": 1,
+                "fade": true,
+                "cssEase": "linear",
+                "slidesToScroll": 1,
+                "autoplay" : true,
+                "draggable" : false,
+                "pauseOnFocus" : false,
+                "responsive": [
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            "asNavFor": "#section8",
+                        }
+                    }
+                ]
+    })
+   $('.results-slick').slick({
+            "dots": true,
+            "speed": 300,
+            "infinite": false,
+            "arrows": true,
+            "fade": true,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay" : true,
+            "appendArrows": $('#resultsArrow') ,
+            "appendDots": $('#resultsDots'), 
+            "nextArrow": '<svg id=slick-next class=slick-next test1 slick-arrow aria-label=Next Slide><use xlink:href=#slick-arrow-next></use></svg>', 
+            "prevArrow": "<svg class=slick-prev slick-arrow aria-label=Previous Slide><use xlink:href=#slick-arrow-prev></use></svg>",
+            "draggable" : false,
+            "asNavFor" : '#testing1',
+            "pauseOnFocus" : false,
+            "responsive": [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        appendArrows: $('#resultsArrow1'),
+                        appendDots: $('#resultsDots1')
+                    }
+                }
+            ]
+   })
+
+
+   reviewCarousel()
+   reviewShow()
+
+   
+
+
+$('.tiktoksrc1').on('click', function() {
+    $(".tiktok-embed").remove();
+    let getID = this.id
+    const tiktoks = [`<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_espana/video/7142937146054298886" data-video-id="7142937146054298886" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_espana" href="https://www.tiktok.com/@superhairpieces_espana?refer=embed">@superhairpieces_espana</a> "Atrévete y verás el cambio" <a title="protesiscapilar" target="_blank" href="https://www.tiktok.com/tag/protesiscapilar?refer=embed">#protesiscapilar</a> <a title="protesiscapilares" target="_blank" href="https://www.tiktok.com/tag/protesiscapilares?refer=embed">#protesiscapilares</a> <a title="protesiscapilarindetectable" target="_blank" href="https://www.tiktok.com/tag/protesiscapilarindetectable?refer=embed">#protesiscapilarindetectable</a> <a title="protesiscapilar" target="_blank" href="https://www.tiktok.com/tag/protesiscapilar?refer=embed">#protesiscapilar</a> <a title="transformaciondecabello" target="_blank" href="https://www.tiktok.com/tag/transformaciondecabello?refer=embed">#transformaciondecabello</a> <a target="_blank" title="♬ sonido original - speedsongs.vcd" href="https://www.tiktok.com/music/sonido-original-7130675554742766342?refer=embed">♬ sonido original - speedsongs.vcd</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"><\/script>`
+        ,`
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_espana/video/7147754965652589830" data-video-id="7147754965652589830" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_espana" href="https://www.tiktok.com/@superhairpieces_espana?refer=embed">@superhairpieces_espana</a> ¿Cuál de las dos te gusta más? <a title="antesydespues" target="_blank" href="https://www.tiktok.com/tag/antesydespues?refer=embed">#antesydespues</a> <a title="transicion" target="_blank" href="https://www.tiktok.com/tag/transicion?refer=embed">#transicion</a> <a title="peluca" target="_blank" href="https://www.tiktok.com/tag/peluca?refer=embed">#peluca</a> <a title="pelucasypostizos" target="_blank" href="https://www.tiktok.com/tag/pelucasypostizos?refer=embed">#pelucasypostizos</a> <a title="pelucas" target="_blank" href="https://www.tiktok.com/tag/pelucas?refer=embed">#pelucas</a> <a title="transformaciondecabello" target="_blank" href="https://www.tiktok.com/tag/transformaciondecabello?refer=embed">#transformaciondecabello</a> <a target="_blank" title="♬ sonido original - ale " href="https://www.tiktok.com/music/sonido-original-7146043762321001221?refer=embed">♬ sonido original - ale </a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"><\/script>`, `
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_espana/video/7148512643005828357" data-video-id="7148512643005828357" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_espana" href="https://www.tiktok.com/@superhairpieces_espana?refer=embed">@superhairpieces_espana</a> Obtén tu cabello de vuelta con nuestras prótesis capilares ¡Aprovecha 40€ de descuento! <a title="protesiscapilares" target="_blank" href="https://www.tiktok.com/tag/protesiscapilares?refer=embed">#protesiscapilares</a> <a title="antesydespues" target="_blank" href="https://www.tiktok.com/tag/antesydespues?refer=embed">#antesydespues</a> <a title="antesydespues" target="_blank" href="https://www.tiktok.com/tag/antesydespues?refer=embed">#antesydespues</a> <a title="protesiscapilarindetectable" target="_blank" href="https://www.tiktok.com/tag/protesiscapilarindetectable?refer=embed">#protesiscapilarindetectable</a> <a target="_blank" title="♬ que somos speed song - ⚡️speed up songs⚡️" href="https://www.tiktok.com/music/que-somos-speed-song-7127749669866064645?refer=embed">♬ que somos speed song - ⚡️speed up songs⚡️</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"><\/script>`,`
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@superhairpieces_espana/video/7135121463140551941" data-video-id="7135121463140551941" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@superhairpieces_espana" href="https://www.tiktok.com/@superhairpieces_espana?refer=embed">@superhairpieces_espana</a> ¿Qué opinas de esta transformación de cabello? Roberto quedó muy contento luego de la instalación de su prótesis capilar <a title="protesiscapilares" target="_blank" href="https://www.tiktok.com/tag/protesiscapilares?refer=embed">#protesiscapilares</a> <a title="protesiscapilar" target="_blank" href="https://www.tiktok.com/tag/protesiscapilar?refer=embed">#protesiscapilar</a> <a title="protesiscapilarindetectable" target="_blank" href="https://www.tiktok.com/tag/protesiscapilarindetectable?refer=embed">#protesiscapilarindetectable</a> <a title="protesiscapilaresespaña" target="_blank" href="https://www.tiktok.com/tag/protesiscapilaresespa%C3%B1a?refer=embed">#protesiscapilaresespaña</a> <a title="perdidadecabello" target="_blank" href="https://www.tiktok.com/tag/perdidadecabello?refer=embed">#perdidadecabello</a> <a title="calvicie" target="_blank" href="https://www.tiktok.com/tag/calvicie?refer=embed">#calvicie</a> <a title="calviciemasculina" target="_blank" href="https://www.tiktok.com/tag/calviciemasculina?refer=embed">#calviciemasculina</a> <a target="_blank" title="♬ sonido original - Alvama Ice" href="https://www.tiktok.com/music/sonido-original-7010850733859916549?refer=embed">♬ sonido original - Alvama Ice</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"><\/script>`]
+
+        $(".v-video-container").prepend(`${tiktoks[getID-1]}`)                
+        $(".v-video-modal").addClass("show");
+})
+
+$(".v-video-modal-overlay, .v-video-modal-close").on("click", function() {
+    $(".v-video-modal").removeClass("show");
+    $(".tiktok-embed").remove();
+})
+})
+
+
+</script>
+
+
+
