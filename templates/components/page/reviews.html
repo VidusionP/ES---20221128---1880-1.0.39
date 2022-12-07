@@ -1895,21 +1895,39 @@ const extra1 = parseInt($(".reviewWall .section").css("maxHeight")) + 2000
    window.addEventListener("DOMContentLoaded", function() {
     var child_index = '';
     let windowChange = $(window).width()
+    let windowChange3 = 800
 
+    if (windowChange < windowChange3) {
+                        $('.homeVideo').append(`
+    <img class=homeGif src="/content/images/marketing/reviewlanding/review.gif">
+`)
+    } else {
+        $('.homeVideo').css("width", "unset")
+        $('.homeVideo').append(`
+        <video id="videoHome" src="/content/images/marketing/reviewlanding/review2.mp4" poster="/content/images/marketing/reviewlanding/review2-img.jpg" autoplay loop muted playsinline>
+    </video>
+
+        `)
+    }
         
     $(window).on("resize orientationchange", function() {
         let windowChange1 = $(window).width()
         let windowChange2 = 800
-        console.log(windowChange1)
-        console.log (windowChange2)
+        // console.log(windowChange1)
+        // console.log (windowChange2)
         if ( windowChange1 < windowChange2) {
-            if (!($($('.homeVideo')[0]).find('img'))) {
+            
+            if (!($('.homeVideo img').length > 0)) {
+            $('.homeVideo').empty()
+            $('.homeVideo').css("width", "100%")
+
                 $('.homeVideo').append(`
     <img class=homeGif src="/content/images/marketing/reviewlanding/review.gif">
 `)
             }
     } else {
-        if (!($($('.homeVideo')[0]).find('video'))) {
+        if (!($('.homeVideo video').length > 0)) {
+            $('.homeVideo').empty()
             $('.homeVideo').css("width", "unset")
         $('.homeVideo').append(`
         <video id="videoHome" src="/content/images/marketing/reviewlanding/review2.mp4" poster="/content/images/marketing/reviewlanding/review2-img.jpg" autoplay loop muted playsinline>
