@@ -119,9 +119,18 @@
              background-color: white;
              padding: 0 10px;
              border-radius: 5px;
+             @include breakpoint(700px) {
+                padding: 0 20px;
+            }
+            @include breakpoint(900px) {
+                padding: 0 40px;
+            }
              div {
             font-family: 'Inter ', sans-serif;
             font-weight: 400;
+                @include breakpoint(900px) {
+                    font-size: 32px;
+                }
              }
         }
         .heroCarousel-subLinks {
@@ -132,6 +141,9 @@
             visibility: hidden;
             animation-delay: 0ms;
             animation-name: fadeOutDown;
+            @include breakpoint(700px) {
+                gap: 20px;
+            }
         }
         .heroCarousel-subtitle{
             visibility: hidden;
@@ -163,6 +175,9 @@
             font-size: 20px;
             text-shadow: 0px 1px 20px #000000;
             letter-spacing: .5px;
+            @include breakpoint(700px) {
+                width: 100%;
+            }
         }
         .heroCarousel-description {
             visibility: hidden;
