@@ -1134,10 +1134,7 @@ export default class Home extends PageManager {
         }
     }
     reviewCarousel() {
-        $(window).on("resize orientationchange", function() {
-            $(".blocktiktok").css('display', 'none')
- 
-        })
+
         let productIds = $("[function=list-product]").data("ids").toString().split(",").map(function
         
             (item) {
