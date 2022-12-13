@@ -114,6 +114,25 @@
     }
 
     .slick-slide {
+        .heroCarousel-link {
+            color: black;
+             background-color: white;
+             padding: 0 10px;
+             border-radius: 5px;
+             div {
+            font-family: 'Inter ', sans-serif;
+            font-weight: 400;
+             }
+        }
+        .heroCarousel-subLinks {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            visibility: hidden;
+            animation-delay: 0ms;
+            animation-name: fadeOutDown;
+        }
         .heroCarousel-subtitle{
             visibility: hidden;
             animation-delay: 0ms;
@@ -125,7 +144,26 @@
             animation-delay: 0ms;
             animation-name: fadeOutDown;
         }
+        .heroCarousel-subtitle2{
+            font-family: 'Inter ', sans-serif;
+            font-weight: 300;
+            margin: unset;
+            line-height: 1.5;
+            font-size: 13px;
+            text-shadow: 0px 1px 20px #000000;
+        }
 
+
+        .heroCarousel-title2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            margin: unset;
+            width: 80%;
+            line-height: 1;
+            font-size: 20px;
+            text-shadow: 0px 1px 20px #000000;
+            letter-spacing: .5px;
+        }
         .heroCarousel-description {
             visibility: hidden;
             animation-delay: 0ms;
@@ -152,6 +190,11 @@
     }
 
     .slick-current {
+        .heroCarousel-subLinks {
+            visibility: visible;
+            animation-delay: 150ms;
+            animation-name: fadeInUp;
+        }
         .heroCarousel-subtitle{
             visibility: visible;
             animation-delay: 50ms;
@@ -328,6 +371,13 @@
         @include breakpoint(992px) {
             width: 30%;
         }
+    }
+    &.hr2-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
     &.hr-content-service {
         padding-left: 45%;
