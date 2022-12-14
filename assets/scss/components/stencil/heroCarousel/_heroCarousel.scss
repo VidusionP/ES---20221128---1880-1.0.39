@@ -125,6 +125,9 @@
             @include breakpoint(900px) {
                 padding: 0 60px;
             }
+            @include breakpoint(1440px) {
+                padding: 0 120px;
+            }
              div {
             font-family: 'Inter ', sans-serif;
             font-weight: 400;
@@ -146,8 +149,15 @@
             visibility: hidden;
             animation-delay: 0ms;
             animation-name: fadeOutDown;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             @include breakpoint(700px) {
                 gap: 20px;
+            }
+            @include breakpoint(1400px) {
+                gap: 40px;
             }
         }
         .heroCarousel-subtitle{
@@ -414,7 +424,12 @@
         justify-content: space-evenly;
         @include breakpoint(900px) {
         max-width: unset;
-
+        }
+        & .hr2-content-title {
+            margin-bottom: 70px;
+            @include breakpoint(1400px) {
+                margin-bottom: 150px;
+            }
         }
     }
     &.hr-content-service {
