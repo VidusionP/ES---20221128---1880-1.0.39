@@ -3,10 +3,10 @@
     "brand": {},
     "category": {},
     "page": {
-      "custom-page.html" : "/test-faq"
+      "custom-page.html": "/test-faq"
     },
     "product": {}
   },
   "normalStoreUrl": "https://superhairpieces.es/",
-  "port": "3004"
+  "port": "3001"
 }

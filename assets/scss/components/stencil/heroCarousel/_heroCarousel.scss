@@ -114,6 +114,52 @@
     }
 
     .slick-slide {
+        .heroCarousel-link {
+            color: black;
+             background-color: white;
+             padding: 0 10px;
+             border-radius: 5px;
+             @include breakpoint(700px) {
+                padding: 0 20px;
+            }
+            @include breakpoint(900px) {
+                padding: 0 60px;
+            }
+            @include breakpoint(1440px) {
+                padding: 0 120px;
+            }
+             div {
+            font-family: 'Inter ', sans-serif;
+            font-weight: 400;
+            @include breakpoint(700px) {
+                font-size: 20px;
+            }
+                @include breakpoint(900px) {
+                }
+                @include breakpoint(1400px) {
+                    font-size: 28px;
+                }
+             }
+        }
+        .heroCarousel-subLinks {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            visibility: hidden;
+            animation-delay: 0ms;
+            animation-name: fadeOutDown;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include breakpoint(700px) {
+                gap: 20px;
+            }
+            @include breakpoint(1400px) {
+                gap: 40px;
+            }
+        }
         .heroCarousel-subtitle{
             visibility: hidden;
             animation-delay: 0ms;
@@ -125,7 +171,45 @@
             animation-delay: 0ms;
             animation-name: fadeOutDown;
         }
+        .heroCarousel-subtitle2{
+            font-family: 'Inter ', sans-serif;
+            font-weight: 300;
+            margin: unset;
+            line-height: 1.5;
+            font-size: 13px;
+            text-shadow: 0px 1px 20px #000000, 0px 1px 20px #000000;
 
+            @include breakpoint(700px) {
+                width: 100%;
+                font-size: 20px;
+            }
+
+            @include breakpoint(1400px) {
+                font-size: 32px;
+            }
+        }
+
+
+        .heroCarousel-title2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            margin: unset;
+            width: 80%;
+            line-height: 1;
+            font-size: 20px;
+            text-shadow: 0px 1px 20px #000000, 0px 1px 20px #000000;
+
+            letter-spacing: .5px;
+            @include breakpoint(700px) {
+                width: 100%;
+                font-size: 30px;
+            }
+            @include breakpoint(1400px) {
+                font-size: 50px;
+                
+
+            }
+        }
         .heroCarousel-description {
             visibility: hidden;
             animation-delay: 0ms;
@@ -152,6 +236,11 @@
     }
 
     .slick-current {
+        .heroCarousel-subLinks {
+            visibility: visible;
+            animation-delay: 150ms;
+            animation-name: fadeInUp;
+        }
         .heroCarousel-subtitle{
             visibility: visible;
             animation-delay: 50ms;
@@ -327,6 +416,22 @@
         }
         @include breakpoint(992px) {
             width: 30%;
+        }
+    }
+    &.hr2-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include breakpoint(900px) {
+        max-width: unset;
+        }
+        & .hr2-content-title {
+            margin-bottom: 70px;
+            @include breakpoint(1400px) {
+                margin-bottom: 150px;
+            }
         }
     }
     &.hr-content-service {
