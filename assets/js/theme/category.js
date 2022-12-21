@@ -28,9 +28,32 @@ export default class Category extends CatalogPage {
         productDisplayMode();
         haloStickyToolbar(this.context);
         this.reviewShow()
+        this.infiniteScroll();
 
     }
+    infiniteScroll() {
+ 
+        const elem = document.querySelector('.productGrid');
+        const infScroll = new InfiniteScroll(elem, {
+        // options
+            path: '.pagination-item--next .pagination-link',
+            append: '.product',
+            history: false,
+            scrollThreshold: 100,
+            onInit: function() {
+                this.on( 'request', function() {
+                    $('.pagination').css('display', 'none')
+                    $('#listing-showmoreBtn > a').addClass('loading');
+                });
+                this.on ( 'last' , function() {
+                    $('#listing-showmoreBtn > a').removeClass('loading');
+                    $('#listing-showmoreBtn > a').addClass('disable').text('No more products');
+                })
+              }
 
+        });
+        return infScroll;
+    }
     initFacetedSearch() {
         const $productListingContainer = $('#product-listing-container .productListing');
         const $facetedSearchContainer = $('#faceted-search-container');
